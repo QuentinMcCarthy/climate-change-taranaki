@@ -1,7 +1,75 @@
 // Variables
+$webContainerMaxWidth:960px;
+$mainHeaderHeight:50px;
 
 
 // Mixins
+@mixin marginCenter($marginVert,$width){
+	margin:$marginVert auto;
+	width:$width;
+}
+
+@mixin fullPercentSize(){
+	height:100%;
+	width:100%;
+}
 
 
 // CSS
+
+* {
+	padding:0;
+	margin:0;
+	box-sizing:border-box;
+}
+
+.webBody {
+	margin-top:$mainHeaderHeight;
+	line-height:1.5;
+}
+
+.webContainer {
+	max-width:$webContainerMaxWidth;
+	width:100vw;
+}
+
+.mainHeader {
+	width:100vw;
+	height:$mainHeaderHeight;
+	position:fixed;
+	left:0;
+	top:0;
+	display:flex;
+	justify-content:space-around;
+	background-color:#EBEBEB;
+}
+
+.navButtonContainer {
+	display:inline-block;
+	order:1;
+	padding:5px;
+}
+.navButtonContainer__navButtonBars {
+	font-size:2.5em;
+}
+
+.logoContainer {
+	display:inline-block;
+	max-width:300px;
+	width:80%;
+	margin:5px;
+	order:2;
+	background:url(https://climatejusticetaranaki.files.wordpress.com/2012/06/cropped-possiblecjtwebsitebanner_7657ccheung.jpg) no-repeat
+}
+.logoContainer__anchor {
+	display:block;
+	@include fullPercentSize();
+	text-decoration:none;
+}
+.logoContainer__heading {
+	color:#981611;
+	font-family:"Trebuchet MS","Lucida Grande",Verdana,Arial,Sans-Serif;
+	font-weight:700;
+	text-align:center;
+	font-size:1.6em;
+}
