@@ -40,6 +40,20 @@ $secondaryColour:#DBDBDB;
 	text-align:center;
 }
 
+@mixin transform($type){
+	transform:$type;
+	-webkit-transform:$type;
+	-ms-transform:$type;
+	-moz-transform:$type;
+}
+
+@mixin transition($prop){
+	transition:$prop;
+	-webkit-transition:$prop;
+	-ms-transition:$prop;
+	-moz-transition:$prop;
+}
+
 
 // CSS
 
@@ -51,6 +65,7 @@ $secondaryColour:#DBDBDB;
 }
 
 a {
+	color:black;
 	text-decoration:none;
 }
 
@@ -105,10 +120,10 @@ a {
 
 .navSlider {
 	@include setPos(fixed,0,nul,-$navSliderWidth,nul);
+	@include transition(0.35s all linear);
 	width:$navSliderWidth;
 	height:100vh;
 	background-color:$primaryColour;
-	transition:0.35s all linear;
 }
 .navSlider--open {
 	left:0;
@@ -147,23 +162,76 @@ a {
 	font-size:2.4em;
 }
 
-.navSliderLinks {
-
-}
+.navSliderLinks {}
 
 .navSliderList {
 	list-style:none;
 	text-align:center;
 	font-size:1.25em;
 }
-.navSliderList__listItem {}
+.navSliderList__listItem {
+	width:100%;
+	height:7.5vh;
+	border-bottom:1px solid grey;
+}
 .navSliderList__listItem--withNest {}
+.navSliderList__listItem--openNest {
+	height:fit-content;
+	border-bottom:1px inset black;
+}
+.navSliderList__anchor {
+	display:block;
+	width:100%;
+	height:100%;
+	display:flex;
+	justify-content:center;
+	align-content:center;
+	flex-direction:column;
+}
+.navSliderList__anchor--disabled {
+}
+.navSliderList__anchorText {
+	display:block;
+}
+.navSliderList__caret {
+	@include setPos(absolute,9.5vh,nul,80vw,nul);
+	@include transition(0.35s all linear);
+	@include transform(rotate(-90deg));
+	font-size:1.25em;
+}
+.navSliderList__caretFirst {}
+.navSliderList__caretSecond {
+	top:16.75vh;
+}
+.navSliderList__caretThird {
+	top:24.25vh;
+}
+.navSliderList__caretFourth {
+	top:31.75vh;
+}
+.navSliderList__caret--disabled {
+	display:none;
+}
+.navSliderList__caret--active {
+	@include transform(rotate(0deg));
+}
 
-.navSliderNestedList {}
-.navSliderNestedList__listItem {}
+.navSliderNestedList {
+	display:none;
+	font-size:1em;
+}
+.navSliderNestedList--open {
+	display:block;
+}
+.navSliderNestedList__listItem {
+	border:0;
+}
+.navSliderNestedlist__anchor {}
+.navSliderNestedList__anchorText {}
 
 .navFadeOut {
 	@include setPos(fixed,0,nul,nul,-(100-$navSliderWidth));
+	@include transition(0.35s all linear);
 	width:(100-$navSliderWidth);
 	height:100vh;
 	background-color:black;

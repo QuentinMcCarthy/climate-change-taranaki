@@ -1,9 +1,11 @@
 * {
   padding: 0;
   margin: 0;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box; }
 
 a {
+  color: black;
   text-decoration: none; }
 
 .logoContainer__anchor {
@@ -25,12 +27,17 @@ a {
   left: 0;
   width: 100vw;
   height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -ms-flex-pack: distribute;
   justify-content: space-around;
   background-color: #EBEBEB; }
 
 .navButtonOpenContainer {
   display: inline-block;
+  -webkit-box-ordinal-group: 2;
+  -ms-flex-order: 1;
   order: 1;
   padding: 5px; }
 
@@ -42,6 +49,8 @@ a {
   max-width: 300px;
   width: 80%;
   margin: 5px;
+  -webkit-box-ordinal-group: 3;
+  -ms-flex-order: 2;
   order: 2;
   background: url(../img/logo_background.jpg) no-repeat; }
 
@@ -56,10 +65,14 @@ a {
   position: fixed;
   top: 0;
   left: -90vw;
+  -o-transition: 0.35s all linear;
+  transition: 0.35s all linear;
+  -webkit-transition: 0.35s all linear;
+  -ms-transition: 0.35s all linear;
+  -moz-transition: 0.35s all linear;
   width: 90vw;
   height: 100vh;
-  background-color: #EBEBEB;
-  transition: 0.35s all linear; }
+  background-color: #EBEBEB; }
 
 .navSlider--open {
   left: 0; }
@@ -68,11 +81,16 @@ a {
   width: 100%;
   height: 50px;
   background-color: #DBDBDB;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -ms-flex-pack: distribute;
   justify-content: space-around; }
 
 .navSlider__content {
   width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
   height: fit-content; }
 
 .navLogoContainer {
@@ -80,6 +98,8 @@ a {
   max-width: 280px;
   width: 85%;
   margin: 5px;
+  -webkit-box-ordinal-group: 2;
+  -ms-flex-order: 1;
   order: 1;
   background: url(../img/logo_background.jpg) no-repeat; }
 
@@ -92,6 +112,8 @@ a {
 
 .navButtonCloseContainer {
   display: inline-block;
+  -webkit-box-ordinal-group: 3;
+  -ms-flex-order: 2;
   order: 2;
   padding: 5px; }
 
@@ -103,10 +125,89 @@ a {
   text-align: center;
   font-size: 1.25em; }
 
+.navSliderList__listItem {
+  width: 100%;
+  height: 7.5vh;
+  border-bottom: 1px solid grey; }
+
+.navSliderList__listItem--openNest {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  border-bottom: 1px inset black; }
+
+.navSliderList__anchor {
+  display: block;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column; }
+
+.navSliderList__anchorText {
+  display: block; }
+
+.navSliderList__caret {
+  position: absolute;
+  top: 9.5vh;
+  left: 80vw;
+  -o-transition: 0.35s all linear;
+  transition: 0.35s all linear;
+  -webkit-transition: 0.35s all linear;
+  -ms-transition: 0.35s all linear;
+  -moz-transition: 0.35s all linear;
+  transform: rotate(-90deg);
+  -webkit-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  font-size: 1.25em; }
+
+.navSliderList__caretSecond {
+  top: 16.75vh; }
+
+.navSliderList__caretThird {
+  top: 24.25vh; }
+
+.navSliderList__caretFourth {
+  top: 31.75vh; }
+
+.navSliderList__caret--disabled {
+  display: none; }
+
+.navSliderList__caret--active {
+  transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  -moz-transform: rotate(0deg); }
+
+.navSliderNestedList {
+  display: none;
+  font-size: 1em; }
+
+.navSliderNestedList--open {
+  display: block; }
+
+.navSliderNestedList__listItem {
+  border: 0; }
+
 .navFadeOut {
   position: fixed;
   top: 0;
   right: -10vw;
+  -o-transition: 0.35s all linear;
+  transition: 0.35s all linear;
+  -webkit-transition: 0.35s all linear;
+  -ms-transition: 0.35s all linear;
+  -moz-transition: 0.35s all linear;
   width: 10vw;
   height: 100vh;
   background-color: black;
@@ -115,5 +216,3 @@ a {
 
 .navFadeOut--active {
   right: 0; }
-
-/*# sourceMappingURL=master.css.map */
