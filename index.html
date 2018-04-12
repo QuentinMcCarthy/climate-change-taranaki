@@ -12,16 +12,78 @@
 	<body class="webBody">
 		<div class="webContainer">
 			<header class="mainHeader">
-				<div class="navButtonContainer">
-					<i class="fas fa-bars navButtonContainer__navButtonBars"></i>
+				<div class="navButtonOpenContainer">
+					<i class="fas fa-bars navButtonOpenContainer__navButtonBars"></i>
 				</div>
-				<div class="logoContainer">
+
+				<div class="mainLogoContainer">
 					<a href="index.html" class="logoContainer__anchor">
 						<!-- <img src="http://placehold.it/300x40" alt="Climate Justice Taranaki Logo"> -->
-						<h1 class="logoContainer__heading">Climate Justice Taranaki</h1>
+						<h1 class="mainLogoContainer__heading">Climate Justice Taranaki</h1>
 					</a>
 				</div>
 			</header>
+
+			<div class="navSlider">
+				<header class="navSlider__header">
+					<div class="navLogoContainer">
+						<a href="index.html" class="logoContainer__anchor">
+							<h2 class="navLogoContainer__heading">Climate Justice Taranaki</h2>
+						</a>
+					</div>
+
+					<div class="navButtonCloseContainer">
+							<i class="fas fa-arrow-left navButtonCloseContainer__navButtonLeftArrow"></i>
+					</div>
+				</header>
+
+				<main class="navSlider__content">
+					<section class="navSliderLinks">
+						<ul class="navSliderList">
+							<li class="navSliderList__listItem navSliderList__listItem--withNest">
+								<a href="about.html">About</a>
+
+								<ul class="navSliderNestedList">
+									<li class="navSliderNestedList__listItem">
+										<a href="faq.html">FAQ</a>
+									</li>
+
+									<li class="navSliderNestedList__listItem">
+										<a href="contact.html">Contact</a>
+									</li>
+								</ul>
+							</li>
+
+							<li class="navSliderList__listItem navSliderList__listItem--withNest">
+								<a href="resources.html">Resources</a>
+
+								<ul class="navSliderNestedList">
+									<li class="navSliderNestedList__listItem">
+										<a href="stories.html">People Stories</a>
+									</li>
+
+									<li class="navSliderNestedList__listItem">
+										<a href="videos.html">Videos</a>
+									</li>
+
+									<li class="navSliderNestedList__listItem">
+										<a href="climate.html">Climate Change</a>
+									</li>
+								</ul>
+							</li>
+
+							<li class="navSliderList__listItem">
+								<a href="events.html">Events</a>
+							</li>
+
+							<li class="navSliderList__listItem">
+								<a href="links.html">Links</a>
+							</li>
+						</ul>
+					</section>
+				</main>
+			</div>
+			<div class="navFadeOut"></div>
 		</div>
 
 		<script src="js/jquery-3.3.1.js"></script>

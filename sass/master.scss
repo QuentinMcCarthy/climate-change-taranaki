@@ -1,7 +1,13 @@
 // Variables
+
+// - Sizing
 $webContainerMaxWidth:960px;
 $mainHeaderHeight:50px;
+$navSliderWidth:90vw;
 
+// - Colour
+$primaryColour:#EBEBEB;
+$secondaryColour:#DBDBDB;
 
 // Mixins
 @mixin marginCenter($marginVert,$width){
@@ -9,20 +15,53 @@ $mainHeaderHeight:50px;
 	width:$width;
 }
 
-@mixin fullPercentSize(){
-	height:100%;
-	width:100%;
+@mixin setPos($type,$top,$bottom,$left,$right){
+	position:$type;
+
+	@if $top != "nul" {
+		top:$top;
+	}
+	@if $bottom != "nul" {
+		bottom:$bottom;
+	}
+
+	@if $left != "nul" {
+		left:$left;
+	}
+	@if $right != "nul" {
+		right:$right;
+	}
+}
+
+@mixin logoHeadingFont(){
+	color:#981611;
+	font-family:"Trebuchet MS","Lucida Grande",Verdana,Arial,Sans-Serif;
+	font-weight:700;
+	text-align:center;
 }
 
 
 // CSS
 
+// - Break from CSS methodology to enforce DRY
 * {
 	padding:0;
 	margin:0;
 	box-sizing:border-box;
 }
 
+a {
+	text-decoration:none;
+}
+
+.logoContainer__anchor {
+	display:block;
+	height:100%;
+	width:100%;
+}
+
+
+// - CSS Methodology
 .webBody {
 	margin-top:$mainHeaderHeight;
 	line-height:1.5;
@@ -34,42 +73,103 @@ $mainHeaderHeight:50px;
 }
 
 .mainHeader {
+	@include setPos(fixed,0,nul,0,nul);
 	width:100vw;
 	height:$mainHeaderHeight;
-	position:fixed;
-	left:0;
-	top:0;
 	display:flex;
 	justify-content:space-around;
-	background-color:#EBEBEB;
+	background-color:$primaryColour;
 }
 
-.navButtonContainer {
+.navButtonOpenContainer {
 	display:inline-block;
 	order:1;
 	padding:5px;
 }
-.navButtonContainer__navButtonBars {
+.navButtonOpenContainer__navButtonBars {
 	font-size:2.5em;
 }
 
-.logoContainer {
+.mainLogoContainer {
 	display:inline-block;
 	max-width:300px;
 	width:80%;
 	margin:5px;
 	order:2;
-	background:url(https://climatejusticetaranaki.files.wordpress.com/2012/06/cropped-possiblecjtwebsitebanner_7657ccheung.jpg) no-repeat
+	background:url(../img/logo_background.jpg) no-repeat;
 }
-.logoContainer__anchor {
-	display:block;
-	@include fullPercentSize();
-	text-decoration:none;
-}
-.logoContainer__heading {
-	color:#981611;
-	font-family:"Trebuchet MS","Lucida Grande",Verdana,Arial,Sans-Serif;
-	font-weight:700;
-	text-align:center;
+.mainLogoContainer__heading {
+	@include logoHeadingFont();
 	font-size:1.6em;
+}
+
+.navSlider {
+	@include setPos(fixed,0,nul,-$navSliderWidth,nul);
+	width:$navSliderWidth;
+	height:100vh;
+	background-color:$primaryColour;
+	transition:0.35s all linear;
+}
+.navSlider--open {
+	left:0;
+}
+.navSlider__header {
+	width:100%;
+	height:$mainHeaderHeight;
+	background-color:$secondaryColour;
+	display:flex;
+	justify-content:space-around;
+}
+.navSlider__content {
+	width:100%;
+	height:fit-content;
+}
+
+.navLogoContainer {
+	display:inline-block;
+	max-width:280px;
+	width:85%;
+	margin:5px;
+	order:1;
+	background:url(../img/logo_background.jpg) no-repeat;
+}
+.navLogoContainer__heading {
+	@include logoHeadingFont();
+	font-size:1.5em;
+}
+
+.navButtonCloseContainer {
+	display:inline-block;
+	order:2;
+	padding:5px;
+}
+.navButtonCloseContainer__navButtonLeftArrow {
+	font-size:2.4em;
+}
+
+.navSliderLinks {
+
+}
+
+.navSliderList {
+	list-style:none;
+	text-align:center;
+	font-size:1.25em;
+}
+.navSliderList__listItem {}
+.navSliderList__listItem--withNest {}
+
+.navSliderNestedList {}
+.navSliderNestedList__listItem {}
+
+.navFadeOut {
+	@include setPos(fixed,0,nul,nul,-(100-$navSliderWidth));
+	width:(100-$navSliderWidth);
+	height:100vh;
+	background-color:black;
+	opacity:0.75;
+	transition:0.35s all linear;
+}
+.navFadeOut--active {
+	right:0;
 }

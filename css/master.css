@@ -3,6 +3,14 @@
   margin: 0;
   box-sizing: border-box; }
 
+a {
+  text-decoration: none; }
+
+.logoContainer__anchor {
+  display: block;
+  height: 100%;
+  width: 100%; }
+
 .webBody {
   margin-top: 50px;
   line-height: 1.5; }
@@ -12,42 +20,100 @@
   width: 100vw; }
 
 .mainHeader {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100vw;
   height: 50px;
-  position: fixed;
-  left: 0;
-  top: 0;
   display: flex;
   justify-content: space-around;
   background-color: #EBEBEB; }
 
-.navButtonContainer {
+.navButtonOpenContainer {
   display: inline-block;
   order: 1;
   padding: 5px; }
 
-.navButtonContainer__navButtonBars {
+.navButtonOpenContainer__navButtonBars {
   font-size: 2.5em; }
 
-.logoContainer {
+.mainLogoContainer {
   display: inline-block;
   max-width: 300px;
   width: 80%;
   margin: 5px;
   order: 2;
-  background: url(https://climatejusticetaranaki.files.wordpress.com/2012/06/cropped-possiblecjtwebsitebanner_7657ccheung.jpg) no-repeat; }
+  background: url(../img/logo_background.jpg) no-repeat; }
 
-.logoContainer__anchor {
-  display: block;
-  height: 100%;
-  width: 100%;
-  text-decoration: none; }
-
-.logoContainer__heading {
+.mainLogoContainer__heading {
   color: #981611;
   font-family: "Trebuchet MS","Lucida Grande",Verdana,Arial,Sans-Serif;
   font-weight: 700;
   text-align: center;
   font-size: 1.6em; }
+
+.navSlider {
+  position: fixed;
+  top: 0;
+  left: -90vw;
+  width: 90vw;
+  height: 100vh;
+  background-color: #EBEBEB;
+  transition: 0.35s all linear; }
+
+.navSlider--open {
+  left: 0; }
+
+.navSlider__header {
+  width: 100%;
+  height: 50px;
+  background-color: #DBDBDB;
+  display: flex;
+  justify-content: space-around; }
+
+.navSlider__content {
+  width: 100%;
+  height: fit-content; }
+
+.navLogoContainer {
+  display: inline-block;
+  max-width: 280px;
+  width: 85%;
+  margin: 5px;
+  order: 1;
+  background: url(../img/logo_background.jpg) no-repeat; }
+
+.navLogoContainer__heading {
+  color: #981611;
+  font-family: "Trebuchet MS","Lucida Grande",Verdana,Arial,Sans-Serif;
+  font-weight: 700;
+  text-align: center;
+  font-size: 1.5em; }
+
+.navButtonCloseContainer {
+  display: inline-block;
+  order: 2;
+  padding: 5px; }
+
+.navButtonCloseContainer__navButtonLeftArrow {
+  font-size: 2.4em; }
+
+.navSliderList {
+  list-style: none;
+  text-align: center;
+  font-size: 1.25em; }
+
+.navFadeOut {
+  position: fixed;
+  top: 0;
+  right: -10vw;
+  width: 10vw;
+  height: 100vh;
+  background-color: black;
+  opacity: 0.75;
+  transition: 0.35s all linear; }
+
+.navFadeOut--active {
+  right: 0; }
 
 /*# sourceMappingURL=master.css.map */
