@@ -10,10 +10,17 @@
 $webContainerMaxWidth:960px;
 $mainHeaderHeight:50px;
 $navSliderWidth:90vw;
+$searchBarHeight:4vh;
 
 // - Colour
 $primaryColour:#EBEBEB;
-$secondaryColour:#DBDBDB;
+$secondaryColour:#D1D1D1;
+$tertiaryColour:#858585;
+
+// Fonts
+$placeholderFonts:Arial,sans-serif; // To be removed
+$headingFonts:$placeholderFonts;
+$sectionContentFonts:$placeholderFonts;
 
 // - FontAwesome
 $fa-font-path:"../webfonts";
@@ -74,6 +81,39 @@ $fa-font-path:"../webfonts";
 	font-size:$fontSize;
 }
 
+@mixin mainContentSectionLayout(){
+	background-color:$primaryColour;
+	margin-bottom:5px;
+}
+
+@mixin mainContentHeaderLayout(){
+	background-color:$secondaryColour;
+	height:7.5vh;
+	display:flex;
+	justify-content:center;
+	align-content:center;
+	flex-direction:column;
+}
+
+@mixin mainContentHeadingFont(){
+	font-family:$headingFonts;
+	text-align:center;
+	line-height:1.2;
+	font-size:1.2em;
+	font-weight:400;
+}
+
+@mixin mainContentContentFont(){
+	font-family:$sectionContentFonts;
+	padding:5px;
+	text-align:justify;
+}
+
+@mixin mainContentPostDate(){
+	font-size:0.9em;
+	font-style:italic;
+	margin-bottom:5px;
+}
 
 // CSS
 * {
@@ -90,7 +130,7 @@ $fa-font-path:"../webfonts";
 }
 
 .webBody {
-	margin-top:$mainHeaderHeight;
+	padding-top:$mainHeaderHeight;
 	line-height:1.5;
 }
 
@@ -268,4 +308,87 @@ $fa-font-path:"../webfonts";
 }
 .navFadeOut--active {
 	right:0;
+}
+
+.mainContent {
+	margin:5px;
+}
+
+.welcomeMessage {
+	@include mainContentSectionLayout();
+}
+.welcomeMessage__header {
+	@include mainContentHeaderLayout;
+}
+.welcomeMessage__headerHeading {
+	@include mainContentHeadingFont();
+	text-transform:uppercase;
+}
+.welcomeMessage__content {
+	@include mainContentContentFont();
+}
+.welcomeMessage__contentPara {}
+
+.recentPosts {
+	@include mainContentSectionLayout();
+}
+.recentPosts__header {
+	@include mainContentHeaderLayout();
+}
+.recentPosts__headerHeading {
+	@include mainContentHeadingFont();
+}
+.recentPosts__content {
+	font-family:$sectionContentFonts;
+	padding:5px;
+}
+.recentPosts__postList {
+	margin-left:5%;
+	padding-left:1.5%;
+}
+
+.postSection1 {
+	@include mainContentSectionLayout();
+}
+.postSection1__header {
+	@include mainContentHeaderLayout();
+}
+.postSection1__headerHeading {
+	@include mainContentHeadingFont();
+}
+.postSection1__content {
+	@include mainContentContentFont();
+}
+.postSection1__contentPara {}
+.postSection1__postDate {
+	@include mainContentPostDate();
+}
+.postSection1__contentQuote {
+	font-style:italic;
+}
+.postSection1__contentReadMore {}
+
+.mainFooter {
+	background-color:$tertiaryColour;
+	max-height:250px;
+	height:40vh;
+	padding:5px;
+}
+.mainFooter__searchBar {
+	border-bottom:1px solid black;
+	padding-bottom:5px;
+	text-align:center;
+}
+.mainFooter__searchInput {
+	width:85%;
+	height:$searchBarHeight;
+	font-size:1em;
+}
+.mainFooter__searchButton {
+	background-color:$primaryColour;
+	width:12.5%;
+	height:$searchBarHeight;
+	border-radius:0;
+	font-size:1em;
+	margin-left:-4px;
 }

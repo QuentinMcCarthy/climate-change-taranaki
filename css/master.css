@@ -2838,7 +2838,7 @@ readers do not read off random characters that represent icons */
   width: 100%; }
 
 .webBody {
-  margin-top: 50px;
+  padding-top: 50px;
   line-height: 1.5; }
 
 .webContainer {
@@ -2896,7 +2896,7 @@ readers do not read off random characters that represent icons */
 .navSlider__header {
   width: 100%;
   height: 50px;
-  background-color: #DBDBDB;
+  background-color: #D1D1D1;
   display: flex;
   justify-content: space-around; }
 
@@ -3028,5 +3028,116 @@ readers do not read off random characters that represent icons */
 
 .navFadeOut--active {
   right: 0; }
+
+.mainContent {
+  margin: 5px; }
+
+.welcomeMessage {
+  background-color: #EBEBEB;
+  margin-bottom: 5px; }
+
+.welcomeMessage__header {
+  background-color: #D1D1D1;
+  height: 7.5vh;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column; }
+
+.welcomeMessage__headerHeading {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  line-height: 1.2;
+  font-size: 1.2em;
+  font-weight: 400;
+  text-transform: uppercase; }
+
+.welcomeMessage__content {
+  font-family: Arial, sans-serif;
+  padding: 5px;
+  text-align: justify; }
+
+.recentPosts {
+  background-color: #EBEBEB;
+  margin-bottom: 5px; }
+
+.recentPosts__header {
+  background-color: #D1D1D1;
+  height: 7.5vh;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column; }
+
+.recentPosts__headerHeading {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  line-height: 1.2;
+  font-size: 1.2em;
+  font-weight: 400; }
+
+.recentPosts__content {
+  font-family: Arial, sans-serif;
+  padding: 5px; }
+
+.recentPosts__postList {
+  margin-left: 5%;
+  padding-left: 1.5%; }
+
+.postSection1 {
+  background-color: #EBEBEB;
+  margin-bottom: 5px; }
+
+.postSection1__header {
+  background-color: #D1D1D1;
+  height: 7.5vh;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column; }
+
+.postSection1__headerHeading {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  line-height: 1.2;
+  font-size: 1.2em;
+  font-weight: 400; }
+
+.postSection1__content {
+  font-family: Arial, sans-serif;
+  padding: 5px;
+  text-align: justify; }
+
+.postSection1__postDate {
+  font-size: 0.9em;
+  font-style: italic;
+  margin-bottom: 5px; }
+
+.postSection1__contentQuote {
+  font-style: italic; }
+
+.mainFooter {
+  background-color: #858585;
+  max-height: 250px;
+  height: 40vh;
+  padding: 5px; }
+
+.mainFooter__searchBar {
+  border-bottom: 1px solid black;
+  padding-bottom: 5px;
+  text-align: center; }
+
+.mainFooter__searchInput {
+  width: 85%;
+  height: 4vh;
+  font-size: 1em; }
+
+.mainFooter__searchButton {
+  background-color: #EBEBEB;
+  width: 12.5%;
+  height: 4vh;
+  border-radius: 0;
+  font-size: 1em;
+  margin-left: -4px; }
 
 /*# sourceMappingURL=master.css.map */
