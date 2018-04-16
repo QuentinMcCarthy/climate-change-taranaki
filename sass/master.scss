@@ -10,20 +10,17 @@
 $webContainerMaxWidth:960px;
 $mainHeaderHeight:50px;
 $navSliderWidth:90vw;
-$searchBarHeight:4vh;
+$footerInputHeight:4vh;
 
-// - Colour
-$primaryColour:#EBEBEB;
-$secondaryColour:#D1D1D1;
-$tertiaryColour:#858585;
+// - Color
+$primaryColor:#EBEBEB;
+$secondaryColor:#D1D1D1;
+$tertiaryColor:#858585;
 
 // Fonts
 $placeholderFonts:Arial,sans-serif; // To be removed
 $headingFonts:$placeholderFonts;
 $sectionContentFonts:$placeholderFonts;
-
-// - FontAwesome
-$fa-font-path:"../webfonts";
 
 // Mixins
 @mixin marginCenter($marginVert,$width){
@@ -82,12 +79,12 @@ $fa-font-path:"../webfonts";
 }
 
 @mixin mainContentSectionLayout(){
-	background-color:$primaryColour;
+	background-color:$primaryColor;
 	margin-bottom:5px;
 }
 
 @mixin mainContentHeaderLayout(){
-	background-color:$secondaryColour;
+	background-color:$secondaryColor;
 	height:7.5vh;
 	display:flex;
 	justify-content:center;
@@ -113,6 +110,24 @@ $fa-font-path:"../webfonts";
 	font-size:0.9em;
 	font-style:italic;
 	margin-bottom:5px;
+}
+
+@mixin footerSectionLayout(){
+	border-bottom:1px solid black;
+	padding-bottom:5px;
+	text-align:center;
+}
+
+@mixin footerInputLayout(){
+	height:$footerInputHeight;
+	font-size:1em;
+}
+
+@mixin footerButtonLayout(){
+	background-color:$primaryColor;
+	height:$footerInputHeight;
+	border-radius:0;
+	font-size:1em;
 }
 
 // CSS
@@ -145,7 +160,7 @@ $fa-font-path:"../webfonts";
 	height:$mainHeaderHeight;
 	display:flex;
 	justify-content:space-around;
-	background-color:$primaryColour;
+	background-color:$primaryColor;
 }
 
 .navButtonOpenContainer {
@@ -175,7 +190,7 @@ $fa-font-path:"../webfonts";
 	@include transition(0.35s all linear);
 	width:$navSliderWidth;
 	height:100vh;
-	background-color:$primaryColour;
+	background-color:$primaryColor;
 }
 .navSlider--open {
 	left:0;
@@ -183,7 +198,7 @@ $fa-font-path:"../webfonts";
 .navSlider__header {
 	width:100%;
 	height:$mainHeaderHeight;
-	background-color:$secondaryColour;
+	background-color:$secondaryColor;
 	display:flex;
 	justify-content:space-around;
 }
@@ -369,26 +384,51 @@ $fa-font-path:"../webfonts";
 .postSection1__contentReadMore {}
 
 .mainFooter {
-	background-color:$tertiaryColour;
-	max-height:250px;
-	height:40vh;
+	background-color:$tertiaryColor;
+	max-height:400px;
+	height:60vh;
 	padding:5px;
 }
 .mainFooter__searchBar {
-	border-bottom:1px solid black;
-	padding-bottom:5px;
-	text-align:center;
+	@include footerSectionLayout();
 }
 .mainFooter__searchInput {
+	@include footerInputLayout();
 	width:85%;
-	height:$searchBarHeight;
-	font-size:1em;
 }
 .mainFooter__searchButton {
-	background-color:$primaryColour;
+	@include footerButtonLayout();
 	width:12.5%;
-	height:$searchBarHeight;
-	border-radius:0;
-	font-size:1em;
 	margin-left:-4px;
 }
+.mainFooter__subscribe {
+	@include footerSectionLayout();
+}
+.mainFooter__subscribeHeading {
+	text-align:left;
+	margin-left:5px;
+}
+.mainFooter__subscribeInput {
+	@include footerInputLayout();
+	width:97.5%;
+}
+.mainFooter__subscribeButton {
+	@include footerButtonLayout();
+	width:97.5%;
+}
+.mainFooter__sitemap {
+	@include footerSectionLayout();
+	text-align:left;
+	font-size:1.1em;
+}
+.mainFooter__sitemapList {
+	margin-left:20px;
+}
+.mainFooter__sitemapListItem {}
+.mainFooter__sitemapAnchor {
+	display:block;
+}
+.mainFooter__sitemapAnchor--disabled {}
+.mainFooter__sitemapNestedList {}
+.mainFooter__sitemapNestedListItem {}
+.mainFooter__sitemapNestedAnchor {}

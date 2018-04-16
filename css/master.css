@@ -3118,8 +3118,8 @@ readers do not read off random characters that represent icons */
 
 .mainFooter {
   background-color: #858585;
-  max-height: 250px;
-  height: 40vh;
+  max-height: 400px;
+  height: 60vh;
   padding: 5px; }
 
 .mainFooter__searchBar {
@@ -3128,16 +3128,50 @@ readers do not read off random characters that represent icons */
   text-align: center; }
 
 .mainFooter__searchInput {
-  width: 85%;
   height: 4vh;
-  font-size: 1em; }
+  font-size: 1em;
+  width: 85%; }
 
 .mainFooter__searchButton {
   background-color: #EBEBEB;
-  width: 12.5%;
   height: 4vh;
   border-radius: 0;
   font-size: 1em;
+  width: 12.5%;
   margin-left: -4px; }
+
+.mainFooter__subscribe {
+  border-bottom: 1px solid black;
+  padding-bottom: 5px;
+  text-align: center; }
+
+.mainFooter__subscribeHeading {
+  text-align: left;
+  margin-left: 5px; }
+
+.mainFooter__subscribeInput {
+  height: 4vh;
+  font-size: 1em;
+  width: 97.5%; }
+
+.mainFooter__subscribeButton {
+  background-color: #EBEBEB;
+  height: 4vh;
+  border-radius: 0;
+  font-size: 1em;
+  width: 97.5%; }
+
+.mainFooter__sitemap {
+  border-bottom: 1px solid black;
+  padding-bottom: 5px;
+  text-align: center;
+  text-align: left;
+  font-size: 1.1em; }
+
+.mainFooter__sitemapList {
+  margin-left: 20px; }
+
+.mainFooter__sitemapAnchor {
+  display: block; }
 
 /*# sourceMappingURL=master.css.map */
