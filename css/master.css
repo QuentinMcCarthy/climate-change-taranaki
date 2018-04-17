@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@import url(../css/normalize.css);
 /*!
  * Font Awesome Free 5.0.10 by @fontawesome - https://fontawesome.com
  * License - https://fontawesome.com/license (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
@@ -2838,8 +2839,8 @@ readers do not read off random characters that represent icons */
   width: 100%; }
 
 .webBody {
-  padding-top: 50px;
-  line-height: 1.5; }
+  line-height: 1.5;
+  padding-top: 50px; }
 
 .webContainer {
   max-width: 960px;
@@ -2849,11 +2850,11 @@ readers do not read off random characters that represent icons */
   position: fixed;
   top: 0;
   left: 0;
+  display: flex;
   width: 100vw;
   height: 50px;
-  display: flex;
   justify-content: space-around;
-  background-color: #EBEBEB; }
+  background-color: #ebebeb; }
 
 .navButtonOpenContainer {
   display: inline-block;
@@ -2867,8 +2868,8 @@ readers do not read off random characters that represent icons */
   display: inline-block;
   max-width: 300px;
   width: 80%;
-  margin: 5px;
   order: 2;
+  margin: 5px;
   background: url(../img/logo_background.jpg) no-repeat; }
 
 .mainLogoContainer__heading {
@@ -2876,7 +2877,8 @@ readers do not read off random characters that represent icons */
   font-family: "Trebuchet MS","Lucida Grande",Verdana,Arial,Sans-Serif;
   font-weight: 700;
   text-align: center;
-  font-size: 1.6em; }
+  font-size: 1.6em;
+  margin: 0; }
 
 .navSlider {
   position: fixed;
@@ -2888,17 +2890,17 @@ readers do not read off random characters that represent icons */
   -moz-transition: 0.35s all linear;
   width: 90vw;
   height: 100vh;
-  background-color: #EBEBEB; }
+  background-color: #ebebeb; }
 
 .navSlider--open {
   left: 0; }
 
 .navSlider__header {
+  display: flex;
   width: 100%;
   height: 50px;
-  background-color: #D1D1D1;
-  display: flex;
-  justify-content: space-around; }
+  justify-content: space-around;
+  background-color: #d1d1d1; }
 
 .navSlider__content {
   width: 100%;
@@ -2908,8 +2910,8 @@ readers do not read off random characters that represent icons */
   display: inline-block;
   max-width: 280px;
   width: 85%;
-  margin: 5px;
   order: 1;
+  margin: 5px;
   background: url(../img/logo_background.jpg) no-repeat; }
 
 .navLogoContainer__heading {
@@ -2944,18 +2946,17 @@ readers do not read off random characters that represent icons */
 .navSliderList__anchor {
   color: black;
   text-decoration: none;
-  display: block;
-  width: 100%;
   display: flex;
+  width: 100%;
   justify-content: center;
   align-content: center;
   flex-direction: column;
-  padding: 0.5em 0; }
+  padding: .5em 0; }
 
 .navSliderList__anchorText {
   display: flex;
-  justify-content: center;
-  height: 1.5em; }
+  height: 1.5em;
+  justify-content: center; }
 
 .navSliderList__anchorText--withCaret::after {
   font-family: "Font Awesome 5 Free";
@@ -3023,8 +3024,8 @@ readers do not read off random characters that represent icons */
   width: 10vw;
   height: 100vh;
   background-color: black;
-  opacity: 0.75;
-  transition: 0.35s all linear; }
+  transition: .35s all linear;
+  opacity: .75; }
 
 .navFadeOut--active {
   right: 0; }
@@ -3033,16 +3034,16 @@ readers do not read off random characters that represent icons */
   margin: 5px; }
 
 .welcomeMessage {
-  background-color: #EBEBEB;
+  background-color: #ebebeb;
   margin-bottom: 5px; }
 
 .welcomeMessage__header {
-  background-color: #D1D1D1;
-  height: 7.5vh;
   display: flex;
+  height: 7.5vh;
   justify-content: center;
   align-content: center;
-  flex-direction: column; }
+  flex-direction: column;
+  background-color: #d1d1d1; }
 
 .welcomeMessage__headerHeading {
   font-family: Arial, sans-serif;
@@ -3054,20 +3055,20 @@ readers do not read off random characters that represent icons */
 
 .welcomeMessage__content {
   font-family: Arial, sans-serif;
-  padding: 5px;
-  text-align: justify; }
+  text-align: justify;
+  padding: 5px; }
 
 .recentPosts {
-  background-color: #EBEBEB;
+  background-color: #ebebeb;
   margin-bottom: 5px; }
 
 .recentPosts__header {
-  background-color: #D1D1D1;
-  height: 7.5vh;
   display: flex;
+  height: 7.5vh;
   justify-content: center;
   align-content: center;
-  flex-direction: column; }
+  flex-direction: column;
+  background-color: #d1d1d1; }
 
 .recentPosts__headerHeading {
   font-family: Arial, sans-serif;
@@ -3085,16 +3086,16 @@ readers do not read off random characters that represent icons */
   padding-left: 1.5%; }
 
 .postSection1 {
-  background-color: #EBEBEB;
+  background-color: #ebebeb;
   margin-bottom: 5px; }
 
 .postSection1__header {
-  background-color: #D1D1D1;
-  height: 7.5vh;
   display: flex;
+  height: 7.5vh;
   justify-content: center;
   align-content: center;
-  flex-direction: column; }
+  flex-direction: column;
+  background-color: #d1d1d1; }
 
 .postSection1__headerHeading {
   font-family: Arial, sans-serif;
@@ -3105,11 +3106,11 @@ readers do not read off random characters that represent icons */
 
 .postSection1__content {
   font-family: Arial, sans-serif;
-  padding: 5px;
-  text-align: justify; }
+  text-align: justify;
+  padding: 5px; }
 
 .postSection1__postDate {
-  font-size: 0.9em;
+  font-size: .9em;
   font-style: italic;
   margin-bottom: 5px; }
 
@@ -3117,15 +3118,15 @@ readers do not read off random characters that represent icons */
   font-style: italic; }
 
 .mainFooter {
-  background-color: #858585;
   max-height: 400px;
   height: 60vh;
+  background-color: #858585;
   padding: 5px; }
 
 .mainFooter__searchBar {
   border-bottom: 1px solid black;
-  padding-bottom: 5px;
-  text-align: center; }
+  text-align: center;
+  padding-bottom: 5px; }
 
 .mainFooter__searchInput {
   height: 4vh;
@@ -3133,17 +3134,17 @@ readers do not read off random characters that represent icons */
   width: 85%; }
 
 .mainFooter__searchButton {
-  background-color: #EBEBEB;
   height: 4vh;
-  border-radius: 0;
   font-size: 1em;
+  background-color: #ebebeb;
+  border-radius: 0;
   width: 12.5%;
   margin-left: -4px; }
 
 .mainFooter__subscribe {
   border-bottom: 1px solid black;
-  padding-bottom: 5px;
-  text-align: center; }
+  text-align: center;
+  padding-bottom: 5px; }
 
 .mainFooter__subscribeHeading {
   text-align: left;
@@ -3155,16 +3156,16 @@ readers do not read off random characters that represent icons */
   width: 97.5%; }
 
 .mainFooter__subscribeButton {
-  background-color: #EBEBEB;
   height: 4vh;
-  border-radius: 0;
   font-size: 1em;
+  background-color: #ebebeb;
+  border-radius: 0;
   width: 97.5%; }
 
 .mainFooter__sitemap {
   border-bottom: 1px solid black;
-  padding-bottom: 5px;
   text-align: center;
+  padding-bottom: 5px;
   text-align: left;
   font-size: 1.1em; }
 

@@ -1,5 +1,8 @@
 // Imports
 
+// CSS Reset
+@import "../css/normalize.css";
+
 // - FontAwesome
 @import "fontawesome/fontawesome.scss";
 @import "fontawesome/fa-solid.scss";
@@ -13,8 +16,8 @@ $navSliderWidth:90vw;
 $footerInputHeight:4vh;
 
 // - Color
-$primaryColor:#EBEBEB;
-$secondaryColor:#D1D1D1;
+$primaryColor:#ebebeb;
+$secondaryColor:#d1d1d1;
 $tertiaryColor:#858585;
 
 // Fonts
@@ -24,26 +27,18 @@ $sectionContentFonts:$placeholderFonts;
 
 // Mixins
 @mixin marginCenter($marginVert,$width){
-	margin:$marginVert auto;
 	width:$width;
+  margin:$marginVert auto;
 }
 
 @mixin setPos($type,$top,$bottom,$left,$right){
 	position:$type;
 
-	@if $top != "nul" {
-		top:$top;
-	}
-	@if $bottom != "nul" {
-		bottom:$bottom;
-	}
+	@if $top != "nul" { top:$top; }
+	@if $bottom != "nul" { bottom:$bottom; }
 
-	@if $left != "nul" {
-		left:$left;
-	}
-	@if $right != "nul" {
-		right:$right;
-	}
+	@if $left != "nul" { left:$left; }
+	@if $right != "nul" { right:$right; }
 }
 
 @mixin logoHeadingFont(){
@@ -54,17 +49,17 @@ $sectionContentFonts:$placeholderFonts;
 }
 
 @mixin transform($type){
-	transform:$type;
+	        transform:$type;
 	-webkit-transform:$type;
-	-ms-transform:$type;
-	-moz-transform:$type;
+	    -ms-transform:$type;
+	   -moz-transform:$type;
 }
 
 @mixin transition($prop){
-	transition:$prop;
+	        transition:$prop;
 	-webkit-transition:$prop;
-	-ms-transition:$prop;
-	-moz-transition:$prop;
+	    -ms-transition:$prop;
+	   -moz-transition:$prop;
 }
 
 @mixin defaultAnchorStyles(){
@@ -84,12 +79,12 @@ $sectionContentFonts:$placeholderFonts;
 }
 
 @mixin mainContentHeaderLayout(){
-	background-color:$secondaryColor;
-	height:7.5vh;
-	display:flex;
+  display:flex;
+  height:7.5vh;
 	justify-content:center;
 	align-content:center;
 	flex-direction:column;
+	background-color:$secondaryColor;
 }
 
 @mixin mainContentHeadingFont(){
@@ -102,20 +97,20 @@ $sectionContentFonts:$placeholderFonts;
 
 @mixin mainContentContentFont(){
 	font-family:$sectionContentFonts;
-	padding:5px;
 	text-align:justify;
+	padding:5px;
 }
 
 @mixin mainContentPostDate(){
-	font-size:0.9em;
+	font-size:.9em;
 	font-style:italic;
 	margin-bottom:5px;
 }
 
 @mixin footerSectionLayout(){
 	border-bottom:1px solid black;
-	padding-bottom:5px;
 	text-align:center;
+	padding-bottom:5px;
 }
 
 @mixin footerInputLayout(){
@@ -124,10 +119,10 @@ $sectionContentFonts:$placeholderFonts;
 }
 
 @mixin footerButtonLayout(){
-	background-color:$primaryColor;
-	height:$footerInputHeight;
-	border-radius:0;
+  height:$footerInputHeight;
 	font-size:1em;
+	background-color:$primaryColor;
+	border-radius:0;
 }
 
 // CSS
@@ -145,8 +140,8 @@ $sectionContentFonts:$placeholderFonts;
 }
 
 .webBody {
-	padding-top:$mainHeaderHeight;
 	line-height:1.5;
+  padding-top:$mainHeaderHeight;
 }
 
 .webContainer {
@@ -156,9 +151,9 @@ $sectionContentFonts:$placeholderFonts;
 
 .mainHeader {
 	@include setPos(fixed,0,nul,0,nul);
+	display:flex;
 	width:100vw;
 	height:$mainHeaderHeight;
-	display:flex;
 	justify-content:space-around;
 	background-color:$primaryColor;
 }
@@ -168,39 +163,36 @@ $sectionContentFonts:$placeholderFonts;
 	order:1;
 	padding:5px;
 }
-.navButtonOpenContainer__navButtonBars {
-	font-size:2.5em;
-}
+.navButtonOpenContainer__navButtonBars { font-size:2.5em; }
 
 .mainLogoContainer {
 	display:inline-block;
 	max-width:300px;
 	width:80%;
-	margin:5px;
 	order:2;
+	margin:5px;
 	background:url(../img/logo_background.jpg) no-repeat;
 }
 .mainLogoContainer__heading {
 	@include logoHeadingFont();
 	font-size:1.6em;
+  margin:0;
 }
 
 .navSlider {
 	@include setPos(fixed,0,nul,-$navSliderWidth,nul);
-	@include transition(0.35s all linear);
+	@include transition(.35s all linear);
 	width:$navSliderWidth;
 	height:100vh;
 	background-color:$primaryColor;
 }
-.navSlider--open {
-	left:0;
-}
+.navSlider--open { left:0; }
 .navSlider__header {
+  display:flex;
 	width:100%;
 	height:$mainHeaderHeight;
-	background-color:$secondaryColor;
-	display:flex;
 	justify-content:space-around;
+	background-color:$secondaryColor;
 }
 .navSlider__content {
 	width:100%;
@@ -211,8 +203,8 @@ $sectionContentFonts:$placeholderFonts;
 	display:inline-block;
 	max-width:280px;
 	width:85%;
-	margin:5px;
 	order:1;
+	margin:5px;
 	background:url(../img/logo_background.jpg) no-repeat;
 }
 .navLogoContainer__heading {
@@ -225,11 +217,7 @@ $sectionContentFonts:$placeholderFonts;
 	order:2;
 	padding:5px;
 }
-.navButtonCloseContainer__navButtonLeftArrow {
-	font-size:2.4em;
-}
-
-.navSliderLinks {}
+.navButtonCloseContainer__navButtonLeftArrow { font-size:2.4em; }
 
 .navSliderList {
 	list-style:none;
@@ -241,93 +229,80 @@ $sectionContentFonts:$placeholderFonts;
 	height:7.5vh;
 	border-bottom:1px solid grey;
 }
-.navSliderList__listItem--withNest {}
+.navSliderList__listItem--withNest {} // REQ. JS
 .navSliderList__listItem--openNest {
 	height:fit-content;
 	border-bottom:1px inset black;
 }
 .navSliderList__anchor {
 	@include defaultAnchorStyles();
-	display:block;
-	width:100%;
 	display:flex;
+	width:100%;
 	justify-content:center;
 	align-content:center;
 	flex-direction:column;
-	padding:0.5em 0;
-}
-.navSliderList__anchor--disabled {
+	padding:.5em 0;
 }
 .navSliderList__anchorText {
 	display:flex;
-	justify-content:center;
 	height:1.5em;
+	justify-content:center;
 }
-.navSliderList__anchorText--withCaret {}
+.navSliderList__anchorText--withCaret {}  // REQ. ::after
 .navSliderList__anchorText--withCaret::after {
 	@include fontAwesomeIcon("\f0d7",1.25em);
-	@include transition(0.1s all linear);
+	@include transition(.1s all linear);
 	display:inline-block;
 }
-.navSliderList__anchorText--withClosedCaret {}
+.navSliderList__anchorText--withClosedCaret {}  // REQ. JS, ::after
 .navSliderList__anchorText--withClosedCaret::after {
 	@include transform(translateY(-3px) rotate(-90deg));
 }
-.navSliderList__anchorText--withOpenCaret {}
+.navSliderList__anchorText--withOpenCaret {}  // REQ. JS, ::after
 .navSliderList__anchorText--withOpenCaret::after {
 	@include transform(translateY(-3px) rotate(0deg));
 }
-.navSliderList__anchorText--withDisabledCaret {}
+.navSliderList__anchorText--withDisabledCaret {}  // REQ. ::after
 .navSliderList__anchorText--withDisabledCaret::after {
 	@include transform(translateY(-3px) rotate(-90deg));
 	visibility:hidden;
 }
-.navSliderList__anchorText--caretFirstPos {}
+.navSliderList__anchorText--caretFirstPos {}  // REQ. ::after
 .navSliderList__anchorText--caretFirstPos::after {
 	@include setPos(relative,nul,nul,30vw,nul);
 }
-.navSliderList__anchorText--caretSecondPos {}
+.navSliderList__anchorText--caretSecondPos {}  // REQ. ::after
 .navSliderList__anchorText--caretSecondPos::after {
 	@include setPos(relative,nul,nul,25.5vw,nul);
 }
-.navSliderList__anchorText--caretThirdPos {}
+.navSliderList__anchorText--caretThirdPos {}  // REQ. ::after
 .navSliderList__anchorText--caretThirdPos::after {
 	@include setPos(relative,nul,nul,29.4vw,nul);
 }
-.navSliderList__anchorText--caretFourthPos {}
+.navSliderList__anchorText--caretFourthPos {}  // REQ. ::after
 .navSliderList__anchorText--caretFourthPos::after {
 	@include setPos(relative,nul,nul,30.4vw,nul);
 }
 
 .navSliderNestedList {
-	display:none;
+  display:none;
 	font-size:1em;
 }
-.navSliderNestedList--open {
-	display:block;
-}
-.navSliderNestedList__listItem {
-	border:0;
-}
-.navSliderNestedList__anchor {}
-.navSliderNestedList__anchorText {}
+.navSliderNestedList--open { display:block; }
+.navSliderNestedList__listItem { border:0; }
 
 .navFadeOut {
 	@include setPos(fixed,0,nul,nul,-(100-$navSliderWidth));
-	@include transition(0.35s all linear);
-	width:(100-$navSliderWidth);
+	@include transition(.35s all linear);
+	width:(100 - $navSliderWidth);
 	height:100vh;
 	background-color:black;
-	opacity:0.75;
-	transition:0.35s all linear;
+	transition:.35s all linear;
+	opacity:.75;
 }
-.navFadeOut--active {
-	right:0;
-}
+.navFadeOut--active { right:0; }
 
-.mainContent {
-	margin:5px;
-}
+.mainContent { margin:5px; }
 
 .welcomeMessage {
 	@include mainContentSectionLayout();
@@ -342,7 +317,6 @@ $sectionContentFonts:$placeholderFonts;
 .welcomeMessage__content {
 	@include mainContentContentFont();
 }
-.welcomeMessage__contentPara {}
 
 .recentPosts {
 	@include mainContentSectionLayout();
@@ -374,19 +348,15 @@ $sectionContentFonts:$placeholderFonts;
 .postSection1__content {
 	@include mainContentContentFont();
 }
-.postSection1__contentPara {}
 .postSection1__postDate {
 	@include mainContentPostDate();
 }
-.postSection1__contentQuote {
-	font-style:italic;
-}
-.postSection1__contentReadMore {}
+.postSection1__contentQuote { font-style:italic; }
 
 .mainFooter {
+  max-height:400px;
+  height:60vh;
 	background-color:$tertiaryColor;
-	max-height:400px;
-	height:60vh;
 	padding:5px;
 }
 .mainFooter__searchBar {
@@ -421,14 +391,5 @@ $sectionContentFonts:$placeholderFonts;
 	text-align:left;
 	font-size:1.1em;
 }
-.mainFooter__sitemapList {
-	margin-left:20px;
-}
-.mainFooter__sitemapListItem {}
-.mainFooter__sitemapAnchor {
-	display:block;
-}
-.mainFooter__sitemapAnchor--disabled {}
-.mainFooter__sitemapNestedList {}
-.mainFooter__sitemapNestedListItem {}
-.mainFooter__sitemapNestedAnchor {}
+.mainFooter__sitemapList { margin-left:20px; }
+.mainFooter__sitemapAnchor { display:block; }
