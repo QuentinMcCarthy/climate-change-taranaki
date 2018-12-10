@@ -26,11 +26,6 @@ $headingFonts: $placeholderFonts;
 $sectionContentFonts: $placeholderFonts;
 
 // Mixins
-@mixin marginCenter($marginVert, $width){
-	width: $width;
-	margin: $marginVert auto;
-}
-
 @mixin setPos($type, $top, $right, $bottom, $left){
 	position: $type;
 
@@ -51,13 +46,6 @@ $sectionContentFonts: $placeholderFonts;
 	}
 }
 
-@mixin logoHeadingFont(){
-	color: #981611;
-	font-family: "Trebuchet MS", "Lucida Grande", Verdana, Arial, Sans-Serif;
-	font-weight: 700;
-	text-align: center;
-}
-
 @mixin transform($type){
 	        transform: $type;
 	-webkit-transform: $type;
@@ -72,81 +60,53 @@ $sectionContentFonts: $placeholderFonts;
 	   -moz-transition: $prop;
 }
 
-@mixin defaultAnchorStyles(){
-	color: black;
-	text-decoration: none;
-}
-
 @mixin fontAwesomeIcon($unicode, $fontSize){
 	font-family: "Font Awesome 5 Free";
 	content: $unicode;
 	font-size: $fontSize;
 }
 
-@mixin mainContentSectionLayout(){
-	background-color: $primaryColor;
-	margin-bottom: 5px;
-}
-
-@mixin mainContentHeaderLayout(){
-	display: flex;
-	height: 7.5vh;
-	justify-content: center;
-	align-content: center;
-	flex-direction: column;
-	background-color: $secondaryColor;
-}
-
-@mixin mainContentHeadingFont(){
-	font-family: $headingFonts;
-	text-align: center;
-	line-height: 1.2;
-	font-size: 1.2em;
-	font-weight: 400;
-}
-
-@mixin mainContentContentFont(){
-	font-family: $sectionContentFonts;
-	text-align: justify;
-	padding: 5px;
-}
-
-@mixin mainContentPostDate(){
-	font-size: .9em;
-	font-style: italic;
-	margin-bottom: 5px;
-}
-
-@mixin footerSectionLayout(){
-	border-bottom: 1px solid black;
-	text-align: center;
-	padding-bottom: 5px;
-}
-
-@mixin footerInputLayout(){
-	height: $footerInputHeight;
-	font-size: 1em;
-}
-
-@mixin footerButtonLayout(){
-	height: $footerInputHeight;
-	font-size: 1em;
-	background-color: $primaryColor;
-	border-radius: 0;
-}
-
 // CSS
+/* Global Styles */
 * {
 	padding: 0;
 	margin: 0;
 	box-sizing: border-box;
 }
 
-.webBody {
+html {
 	line-height: 1.5;
+}
+
+body {
 	padding-top: $mainHeaderHeight;
 }
 
+.logoContainer__anchor {
+	display: block;
+	color: black;
+	text-decoration: none;
+}
+
+.logoContainer__heading {
+	color: #981611;
+	font-family: "Trebuchet MS", "Lucida Grande", Verdana, Arial, Sans-Serif;
+	font-weight: 700;
+	text-align: center;
+	font-size: 1.5em;
+	margin: 0;
+}
+
+.navButtonContainer {
+	display: inline-block;
+	padding: 5px;
+
+	i {
+		font-size: 2.45em;
+	}
+}
+
+/* Individual Styles */
 .webContainer {
 	max-width: $webContainerMaxWidth;
 	width: 100vw;
@@ -161,32 +121,12 @@ $sectionContentFonts: $placeholderFonts;
 	background-color: $primaryColor;
 }
 
-.logoContainer__anchor {
-	@include defaultAnchorStyles();
-	display: block;
-	height: 100%;
-	width: 100%;
-}
-
-.navButtonOpenContainer {
-	display: inline-block;
-	order: 1;
-	padding: 5px;
-}
-.navButtonOpenContainer__navButtonBars { font-size: 2.5em; }
-
 .mainLogoContainer {
 	display: inline-block;
 	max-width: 300px;
 	width: 80%;
-	order: 2;
 	margin: 5px;
 	background: url(../img/logo_background.jpg) no-repeat;
-}
-.mainLogoContainer__heading {
-	@include logoHeadingFont();
-	font-size: 1.6em;
-	margin: 0;
 }
 
 .navSlider {
@@ -195,102 +135,113 @@ $sectionContentFonts: $placeholderFonts;
 	width: $navSliderWidth;
 	height: 100vh;
 	background-color: $primaryColor;
-}
-.navSlider--open { left: 0; }
-.navSlider__header {
-	display: flex;
-	width: 100%;
-	height: $mainHeaderHeight;
-	justify-content: space-around;
-	background-color: $secondaryColor;
-}
-.navSlider__content {
-	width: 100%;
-	height: fit-content;
+
+	header {
+		display: flex;
+		width: 100%;
+		height: $mainHeaderHeight;
+		justify-content: space-around;
+		background-color: $secondaryColor;
+
+		.navLogoContainer {
+			display: inline-block;
+			max-width: 280px;
+			width: 85%;
+			margin: 5px;
+			background: url(../img/logo_background.jpg) no-repeat;
+		}
+	}
+
+	.navSlider__content {
+		width: 100%;
+		height: fit-content;
+
+		.navSliderList {
+			list-style: none;
+			text-align: center;
+			font-size: 1.25em;
+
+			.navSliderList__listItem {
+				width: 100%;
+				height: 7.5vh;
+				border-bottom: 1px solid grey;
+
+				a {
+					color: black;
+					text-decoration: none;
+					display: flex;
+					width: 100%;
+					justify-content: center;
+					align-content: center;
+					flex-direction: column;
+					padding: .5em 0;
+
+					.navSliderList__anchorText {
+						display: flex;
+						height: 1.5em;
+						justify-content: center;
+					}
+
+					.navSliderList__anchorText--withCaret::after {
+						@include fontAwesomeIcon("\f0d7", 1.25em);
+						@include transition(.1s all linear);
+						display: inline-block;
+					}
+
+					.navSliderList__anchorText--withClosedCaret::after {
+						@include transform(translateY(-3px) rotate(-90deg));
+					}
+
+					.navSliderList__anchorText--withOpenCaret::after {
+						@include transform(translateY(-3px) rotate(0deg));
+					}
+
+					.navSliderList__anchorText--withDisabledCaret::after {
+						@include transform(translateY(-3px) rotate(-90deg));
+						visibility: hidden;
+					}
+
+					.navSliderList__anchorText--caretFirstPos::after {
+						@include setPos(relative, nul, nul, nul, 30vw);
+					}
+
+					.navSliderList__anchorText--caretSecondPos::after {
+						@include setPos(relative, nul, nul, nul, 25.5vw);
+					}
+
+					.navSliderList__anchorText--caretThirdPos::after {
+						@include setPos(relative, nul, nul, nul, 29.4vw);
+					}
+
+					.navSliderList__anchorText--caretFourthPos::after {
+						@include setPos(relative, nul, nul, nul, 30.4vw);
+					}
+				}
+
+				.navSliderNestedList {
+					display: none;
+					font-size: 1em;
+
+					.navSliderNestedList__listItem {
+						border: 0;
+					}
+				}
+
+				.navSliderNestedList--open {
+					display: block;
+				}
+			}
+
+			.navSliderList__listItem--openNest {
+				height: fit-content;
+			}
+		}
+	}
 }
 
-.navLogoContainer {
-	display: inline-block;
-	max-width: 280px;
-	width: 85%;
-	order: 1;
-	margin: 5px;
-	background: url(../img/logo_background.jpg) no-repeat;
+.navSlider--open {
+	left: 0;
 }
-.navLogoContainer__heading {
-	@include logoHeadingFont();
-	font-size: 1.5em;
-}
-
-.navButtonCloseContainer {
-	display: inline-block;
-	order: 2;
-	padding: 5px;
-}
-.navButtonCloseContainer__navButtonLeftArrow { font-size: 2.4em; }
-
-.navSliderList {
-	list-style: none;
-	text-align: center;
-	font-size: 1.25em;
-}
-.navSliderList__listItem {
-	width: 100%;
-	height: 7.5vh;
-	border-bottom: 1px solid grey;
-}
-.navSliderList__listItem--openNest {
-	height: fit-content;
-	border-bottom: 1px inset black;
-}
-.navSliderList__anchor {
-	@include defaultAnchorStyles();
-	display: flex;
-	width: 100%;
-	justify-content: center;
-	align-content: center;
-	flex-direction: column;
-	padding: .5em 0;
-}
-.navSliderList__anchorText {
-	display: flex;
-	height: 1.5em;
-	justify-content: center;
-}
-.navSliderList__anchorText--withCaret::after {
-	@include fontAwesomeIcon("\f0d7", 1.25em);
-	@include transition(.1s all linear);
-	display: inline-block;
-}
-.navSliderList__anchorText--withClosedCaret::after {
-	@include transform(translateY(-3px) rotate(-90deg));
-}
-.navSliderList__anchorText--withOpenCaret::after {
-	@include transform(translateY(-3px) rotate(0deg));
-}
-.navSliderList__anchorText--withDisabledCaret::after {
-	@include transform(translateY(-3px) rotate(-90deg));
-	visibility: hidden;
-}
-.navSliderList__anchorText--caretFirstPos::after {
-	@include setPos(relative, nul, nul, nul, 30vw);
-}
-.navSliderList__anchorText--caretSecondPos::after {
-	@include setPos(relative, nul, nul, nul, 25.5vw);
-}
-.navSliderList__anchorText--caretThirdPos::after {
-	@include setPos(relative, nul, nul, nul, 29.4vw);
-}
-.navSliderList__anchorText--caretFourthPos::after {
-	@include setPos(relative, nul, nul, nul, 30.4vw);
-}
-
-.navSliderNestedList {
-	display: none;
-	font-size: 1em;
-}
-.navSliderNestedList--open { display: block; }
-.navSliderNestedList__listItem { border: 0; }
 
 .navFadeOut {
 	@include setPos(fixed, 0, -(100-$navSliderWidth), nul, nul);
@@ -298,99 +249,124 @@ $sectionContentFonts: $placeholderFonts;
 	width: (100 - $navSliderWidth);
 	height: 100vh;
 	background-color: black;
-	transition: .35s all linear;
 	opacity: .75;
 }
-.navFadeOut--active { right: 0; }
 
-.mainContent { margin: 5px; }
-
-.welcomeMessage {
-	@include mainContentSectionLayout();
-}
-.welcomeMessage__header {
-	@include mainContentHeaderLayout;
-}
-.welcomeMessage__headerHeading {
-	@include mainContentHeadingFont();
-	text-transform: uppercase;
-}
-.welcomeMessage__content {
-	@include mainContentContentFont();
+.navFadeOut--active {
+	right: 0;
 }
 
-.recentPosts {
-	@include mainContentSectionLayout();
-}
-.recentPosts__header {
-	@include mainContentHeaderLayout();
-}
-.recentPosts__headerHeading {
-	@include mainContentHeadingFont();
-}
-.recentPosts__content {
-	font-family: $sectionContentFonts;
-	padding: 5px;
-}
-.recentPosts__postList {
-	margin-left: 5%;
-	padding-left: 1.5%;
-}
+.mainContent {
+	margin: 5px;
 
-.postSection1 {
-	@include mainContentSectionLayout();
+	section {
+		background-color: #ebebeb;
+		margin-bottom: 5px;
+
+		header {
+			display: flex;
+			height: 7.5vh;
+			justify-content: center;
+			align-content: center;
+			flex-direction: column;
+			background-color: #d1d1d1;
+
+			h2 {
+				font-family: Arial, sans-serif;
+				text-align: center;
+				line-height: 1.2;
+				font-size: 1.2em;
+				font-weight: 400;
+			}
+
+			.mainContent__welcomeHeading {
+				text-transform: uppercase;
+			}
+		}
+
+		div {
+			font-family: Arial, sans-serif;
+			text-align: justify;
+			padding: 5px;
+
+			ul {
+				margin-left: 5%;
+				padding-left: 1.5%;
+			}
+
+			q {
+				font-style: italic;
+			}
+
+			.mainContent__postDate {
+				font-size: .9em;
+				font-style: italic;
+				margin-bottom: 5px;
+			}
+		}
+
+		.mainContent__content--noAlign {
+			text-align: initial;
+		}
+	}
 }
-.postSection1__header {
-	@include mainContentHeaderLayout();
-}
-.postSection1__headerHeading {
-	@include mainContentHeadingFont();
-}
-.postSection1__content {
-	@include mainContentContentFont();
-}
-.postSection1__postDate {
-	@include mainContentPostDate();
-}
-.postSection1__contentQuote { font-style: italic; }
 
 .mainFooter {
 	max-height: 400px;
 	height: 60vh;
 	background-color: $tertiaryColor;
 	padding: 5px;
+
+	div {
+		border-bottom: 1px solid black;
+		text-align: center;
+		padding-bottom: 5px;
+
+		.mainFooter__subscribeHeading {
+			text-align: left;
+			margin-left: 5px;
+		}
+
+		input {
+			height: $footerInputHeight;
+			font-size: 1em;
+		}
+
+		.mainFooter__searchInput {
+			width: 85%;
+		}
+
+		.mainFooter__subscribeInput {
+			width: 97.5%;
+		}
+
+		button {
+			height: $footerInputHeight;
+			font-size: 1em;
+			background-color: $primaryColor;
+			border-radius: 0;
+		}
+
+		.mainFooter__searchButton {
+			width: 12.5%;
+			margin-left: -4px;
+		}
+
+		.mainFooter__subscribeButton {
+			width: 97.5%;
+		}
+
+		ul {
+			margin-left: 20px;
+
+			a {
+				display: block;
+			}
+		}
+	}
+
+	.mainFooter__sitemap {
+		text-align: initial;
+		font-size: 1.1em;
+	}
 }
-.mainFooter__searchBar {
-	@include footerSectionLayout();
-}
-.mainFooter__searchInput {
-	@include footerInputLayout();
-	width: 85%;
-}
-.mainFooter__searchButton {
-	@include footerButtonLayout();
-	width: 12.5%;
-	margin-left: -4px;
-}
-.mainFooter__subscribe {
-	@include footerSectionLayout();
-}
-.mainFooter__subscribeHeading {
-	text-align: left;
-	margin-left: 5px;
-}
-.mainFooter__subscribeInput {
-	@include footerInputLayout();
-	width: 97.5%;
-}
-.mainFooter__subscribeButton {
-	@include footerButtonLayout();
-	width: 97.5%;
-}
-.mainFooter__sitemap {
-	@include footerSectionLayout();
-	text-align: left;
-	font-size: 1.1em;
-}
-.mainFooter__sitemapList { margin-left: 20px; }
-.mainFooter__sitemapAnchor { display: block; }

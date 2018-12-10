@@ -7,82 +7,82 @@
 
 		<link rel="stylesheet" href="css/master.css">
 	</head>
-	<body class="webBody">
+	<body>
 		<div class="webContainer">
 			<header class="mainHeader">
-				<div class="navButtonOpenContainer">
-					<i class="fas fa-bars navButtonOpenContainer__navButtonBars"></i>
+				<div class="navButtonContainer" data-nav="open">
+					<i class="fas fa-bars"></i>
 				</div>
 
 				<div class="mainLogoContainer">
-					<a class="logoContainer__anchor" href="index.html">
-						<h1 class="mainLogoContainer__heading">Climate Justice Taranaki</h1>
+					<a class="logoContainer__anchor" href="index.html" title="Home">
+						<h1 class="logoContainer__heading">Climate Justice Taranaki</h1>
 					</a>
 				</div>
 			</header>
 
 			<div class="navSlider">
-				<header class="navSlider__header">
+				<header>
 					<div class="navLogoContainer">
 						<a class="logoContainer__anchor" href="index.html">
-							<h2 class="navLogoContainer__heading">Climate Justice Taranaki</h2>
+							<h2 class="logoContainer__heading">Climate Justice Taranaki</h2>
 						</a>
 					</div>
 
-					<div class="navButtonCloseContainer">
-							<i class="fas fa-arrow-left navButtonCloseContainer__navButtonLeftArrow"></i>
+					<div class="navButtonContainer" data-nav="close">
+							<i class="fas fa-arrow-left"></i>
 					</div>
 				</header>
 
 				<div class="navSlider__content">
 					<div>
 						<ul class="navSliderList">
-							<li class="navSliderList__listItem navSliderList__listItem--withNest">
-								<a class="navSliderList__anchor">
+							<li class="navSliderList__listItem" data-nest="true">
+								<a>
 									<span class="navSliderList__anchorText navSliderList__anchorText--withCaret navSliderList__anchorText--withClosedCaret navSliderList__anchorText--caretFirstPos">About</span>
 								</a>
 
 								<ul class="navSliderList navSliderNestedList">
 									<li class="navSliderList__listItem navSliderNestedList__listItem">
-										<a class="navSliderList__anchor" href="about.html">
+										<a href="about.html">
 											<span class="navSliderList__anchorText">About</span>
 										</a>
 									</li>
 
 									<li class="navSliderList__listItem navSliderNestedList__listItem">
-										<a class="navSliderList__anchor" href="faq.html">
+										<a href="faq.html">
 											<span class="navSliderList__anchorText">FAQ</span>
 										</a>
 									</li>
 
 									<li class="navSliderList__listItem navSliderNestedList__listItem">
-										<a class="navSliderList__anchor" href="contact.html">
+										<a href="contact.html">
 											<span class="navSliderList__anchorText">Contact</span>
 										</a>
 									</li>
 								</ul>
 							</li>
 
-							<li class="navSliderList__listItem navSliderList__listItem--withNest">
-								<a class="navSliderList__anchor">
+							<li class="navSliderList__listItem" data-nest="true">
+								<a>
 									<span class="navSliderList__anchorText navSliderList__anchorText--withCaret  navSliderList__anchorText--withClosedCaret navSliderList__anchorText--caretSecondPos">Resources</span>
 								</a>
 
 								<ul class="navSliderList navSliderNestedList">
 									<li class="nnavSliderList__listItem avSliderNestedList__listItem">
-										<a class="navSliderList__anchor" href="stories.html">
+										<a href="stories.html">
 											<span class="navSliderList__anchorText">People Stories</span>
 										</a>
 									</li>
 
 									<li class="navSliderList__listItem navSliderNestedList__listItem">
-										<a class="navSliderList__anchor" href="videos.html">
+										<a href="videos.html">
 											<span class="navSliderList__anchorText">Videos</span>
 										</a>
 									</li>
 
 									<li class="navSliderList__listItem navSliderNestedList__listItem">
-										<a class="navSliderList__anchor" href="climate.html">
+										<a href="climate.html">
 											<span class="navSliderList__anchorText">Climate Change</span>
 										</a>
 									</li>
@@ -90,13 +90,13 @@
 							</li>
 
 							<li class="navSliderList__listItem">
-								<a class="navSliderList__anchor" href="events.html">
+								<a href="events.html">
 									<span class="navSliderList__anchorText navSliderList__anchorText--withCaret navSliderList__anchorText--withDisabledCaret navSliderList__anchorText--caretThirdPos">Events</span>
 								</a>
 							</li>
 
 							<li class="navSliderList__listItem">
-								<a class="navSliderList__anchor" href="links.html">
+								<a href="links.html">
 									<span class="navSliderList__anchorText navSliderList__anchorText--withCaret navSliderList__anchorText--withDisabledCaret navSliderList__anchorText--caretFourthPos">Links</span>
 								</a>
 							</li>
@@ -108,23 +108,23 @@
 			<div class="navFadeOut"></div>
 
 			<main class="mainContent">
-				<section class="welcomeMessage">
-					<header class="welcomeMessage__header">
-						<h2 class="welcomeMessage__headerHeading">Welcome<br>to our website</h2>
+				<section>
+					<header>
+						<h2 class="mainContent__welcomeHeading">Welcome<br>to our website</h2>
 					</header>
 
-					<div class="welcomeMessage__content">
+					<div>
 						<p>Kia Ora, Climate Justice Taranaki is a community group dedicated to justice, resistance, education and positive action at the front lines of climate change.</p>
 					</div>
 				</section>
 
-				<section class="recentPosts">
-					<header class="recentPosts__header">
-						<h2 class="recentPosts__headerHeading">Recent Posts</h2>
+				<section>
+					<header>
+						<h2>Recent Posts</h2>
 					</header>
 
-					<div class="recentPosts__content">
-						<ul class="recentPosts__postList">
+					<div class="mainContent__content--noAlign">
+						<ul>
 							<li>
 								<a href="#">Media Release: Taranaki people headed for Petroleum Conference blockage</a>
 							</li>
@@ -144,61 +144,61 @@
 					</div>
 				</section>
 
-				<section class="postSection1">
-					<header class="postSection1__header">
-						<h2 class="postSection1__headerHeading">Media Release: Taranaki people headed for Petroleum Conference blockade</h2>
+				<section>
+					<header>
+						<h2>Media Release: Taranaki people headed for Petroleum Conference blockade</h2>
 					</header>
 
-					<div class="postSection1__content">
-						<p class="postSection1__postDate">22/03/2018</p>
-						<p><q class="postSection1__contentQuote">Taranaki people, residents and whānau with concerns for our global climate are travelling to Wellington next week to participate in the Rally for Climate Justice and the blockade of the annual Petroleum Conference</q> says Urs Signer, member of Climate Justice Taranaki.</p>
+					<div>
+						<p class="mainContent__postDate">22/03/2018</p>
+						<p><q>Taranaki people, residents and whānau with concerns for our global climate are travelling to Wellington next week to participate in the Rally for Climate Justice and the blockade of the annual Petroleum Conference</q> says Urs Signer, member of Climate Justice Taranaki.</p>
 						<a href="#">Read More</a>
 					</div>
 				</section>
 			</main>
 
 			<footer class="mainFooter">
-				<div class="mainFooter__searchBar">
+				<div>
 					<input class="mainFooter__searchInput" name="searchBar" value="" type="text" placeholder="Search">
 					<button class="mainFooter__searchButton" name="searchGo" type="submit">GO</button>
 				</div>
 
-				<div class="mainFooter__subscribe">
+				<div>
 					<h3 class="mainFooter__subscribeHeading">Newsletter</h3>
 					<input class="mainFooter__subscribeInput" name="subscribeEmail" type="text" value="" placeholder="Email">
 					<button class="mainFooter__subscribeButton" name="subscribeButton" type="submit">Subscribe</button>
 				</div>
 
 				<div class="mainFooter__sitemap">
-					<ul class="mainFooter__sitemapList">
+					<ul>
 						<li>
-							<a class="mainFooter__sitemapAnchor" href="index.html">Home</a>
+							<a href="index.html">Home</a>
 						</li>
 
 						<li>
-							<a class="mainFooter__sitemapAnchor" href="about.html">About</a>
+							<a href="about.html">About</a>
 
-							<ul class="mainFooter__sitemapList">
+							<ul>
 								<li>
-									<a class="mainFooter__sitemapAnchor" href="faq.html">FAQ</a>
+									<a href="faq.html">FAQ</a>
 								</li>
 
 								<li>
-									<a class="mainFooter__sitemapAnchor" href="contact.html">Contact</a>
+									<a href="contact.html">Contact</a>
 								</li>
 							</ul>
 						</li>
 
 						<li>
-							<a class="mainFooter__sitemapAnchor">Resources</a>
+							<a>Resources</a>
 
-							<ul class="mainFooter__sitemapList">
+							<ul>
 								<li>
-									<a class="mainFooter__sitemapAnchor" href="stories.html">People Stories</a>
+									<a href="stories.html">People Stories</a>
 								</li>
 
 								<li>
-									<a class="mainFooter__sitemapAnchor" href="videos.html">Videos</a>
+									<a href="videos.html">Videos</a>
 								</li>
 
 								<li>
@@ -208,11 +208,11 @@
 						</li>
 
 						<li>
-							<a class="mainFooter__sitemapAnchor" href="events.html">Events</a>
+							<a href="events.html">Events</a>
 						</li>
 
 						<li>
-							<a class="mainFooter__sitemapAnchor" href="links.html">Links</a>
+							<a href="links.html">Links</a>
 						</li>
 					</ul>
 				</div>
