@@ -5,16 +5,19 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no">
 		<title>Climate Justice Taranaki</title>
 
+		<!-- Bootstrap -->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
 		<link rel="stylesheet" href="css/master.css">
 	</head>
 	<body>
-		<div class="webContainer">
+		<div class="container">
 			<header class="mainHeader">
-				<div class="navButtonContainer" data-nav="open">
+				<div class="navButtonContainer">
 					<i class="fas fa-bars"></i>
 				</div>
 
-				<div class="mainLogoContainer">
+				<div class="logoContainer">
 					<a class="logoContainer__anchor" href="index.html" title="Home">
 						<h1 class="logoContainer__heading">Climate Justice Taranaki</h1>
 					</a>
@@ -23,13 +26,13 @@
 
 			<div class="navSlider">
 				<header>
-					<div class="navLogoContainer">
+					<div class="logoContainer navLogoContainer">
 						<a class="logoContainer__anchor" href="index.html">
 							<h2 class="logoContainer__heading">Climate Justice Taranaki</h2>
 						</a>
 					</div>
 
-					<div class="navButtonContainer" data-nav="close">
+					<div class="navButtonContainer">
 							<i class="fas fa-arrow-left"></i>
 					</div>
 				</header>
@@ -38,25 +41,25 @@
 					<div>
 						<ul class="navSliderList">
 							<li class="navSliderList__listItem" data-nest="true">
-								<a>
-									<span class="navSliderList__anchorText navSliderList__anchorText--withCaret navSliderList__anchorText--withClosedCaret navSliderList__anchorText--caretFirstPos">About</span>
+								<a class="navSliderList__anchor navSliderList__anchor--withCaret navSliderList__anchor--withClosedCaret">
+									<span class="navSliderList__anchorText">About</span>
 								</a>
 
 								<ul class="navSliderList navSliderNestedList">
 									<li class="navSliderList__listItem navSliderNestedList__listItem">
-										<a href="about.html">
+										<a href="about.html" class="navSliderList__anchor">
 											<span class="navSliderList__anchorText">About</span>
 										</a>
 									</li>
 
 									<li class="navSliderList__listItem navSliderNestedList__listItem">
-										<a href="faq.html">
+										<a href="faq.html" class="navSliderList__anchor">
 											<span class="navSliderList__anchorText">FAQ</span>
 										</a>
 									</li>
 
 									<li class="navSliderList__listItem navSliderNestedList__listItem">
-										<a href="contact.html">
+										<a href="contact.html" class="navSliderList__anchor">
 											<span class="navSliderList__anchorText">Contact</span>
 										</a>
 									</li>
@@ -64,40 +67,40 @@
 							</li>
 
 							<li class="navSliderList__listItem" data-nest="true">
-								<a>
-									<span class="navSliderList__anchorText navSliderList__anchorText--withCaret  navSliderList__anchorText--withClosedCaret navSliderList__anchorText--caretSecondPos">Resources</span>
+								<a class="navSliderList__anchor navSliderList__anchor--withCaret navSliderList__anchor--withClosedCaret">
+									<span class="navSliderList__anchorText">Resources</span>
 								</a>
 
 								<ul class="navSliderList navSliderNestedList">
 									<li class="nnavSliderList__listItem avSliderNestedList__listItem">
-										<a href="stories.html">
+										<a href="stories.html" class="navSliderList__anchor">
 											<span class="navSliderList__anchorText">People Stories</span>
 										</a>
 									</li>
 
 									<li class="navSliderList__listItem navSliderNestedList__listItem">
-										<a href="videos.html">
+										<a href="videos.html" class="navSliderList__anchor">
 											<span class="navSliderList__anchorText">Videos</span>
 										</a>
 									</li>
 
 									<li class="navSliderList__listItem navSliderNestedList__listItem">
-										<a href="climate.html">
+										<a href="climate.html" class="navSliderList__anchor">
 											<span class="navSliderList__anchorText">Climate Change</span>
 										</a>
 									</li>
 								</ul>
 							</li>
 
-							<li class="navSliderList__listItem">
-								<a href="events.html">
-									<span class="navSliderList__anchorText navSliderList__anchorText--withCaret navSliderList__anchorText--withDisabledCaret navSliderList__anchorText--caretThirdPos">Events</span>
+							<li class="navSliderList__listItem" data-nest="false">
+								<a href="events.html" class="navSliderList__anchor navSliderList__anchor--withCaret navSliderList__anchor--withClosedCaret navSliderList__anchor--withDisabledCaret">
+									<span class="navSliderList__anchorText">Events</span>
 								</a>
 							</li>
 
-							<li class="navSliderList__listItem">
-								<a href="links.html">
-									<span class="navSliderList__anchorText navSliderList__anchorText--withCaret navSliderList__anchorText--withDisabledCaret navSliderList__anchorText--caretFourthPos">Links</span>
+							<li class="navSliderList__listItem" data-nest="false">
+								<a href="links.html" class="navSliderList__anchor navSliderList__anchor--withCaret navSliderList__anchor--withClosedCaret navSliderList__anchor--withDisabledCaret">
+									<span class="navSliderList__anchorText">Links</span>
 								</a>
 							</li>
 						</ul>

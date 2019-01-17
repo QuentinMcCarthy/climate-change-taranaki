@@ -19,14 +19,19 @@ $footerInputHeight: 4vh;
 $primaryColor: #ebebeb;
 $secondaryColor: #d1d1d1;
 $tertiaryColor: #858585;
+$logoColor: #981611;
 
 // Fonts
 $placeholderFonts: Arial, sans-serif; // To be removed
 $headingFonts: $placeholderFonts;
 $sectionContentFonts: $placeholderFonts;
+$logoFonts: "Trebuchet MS", "Lucida Grande", Verdana, Arial, Sans-Serif;
+
+// Other
+$logo: url(../img/logo_background.jpg) no-repeat;
 
 // Mixins
-@mixin setPos($type, $top, $right, $bottom, $left){
+@mixin position($type, $top, $right, $bottom, $left){
 	position: $type;
 
 	@if $top != "nul" {
@@ -44,6 +49,70 @@ $sectionContentFonts: $placeholderFonts;
 	@if $left != "nul" {
 		left: $left;
 	}
+}
+@mixin margin($top, $right, $bottom, $left){
+	@if $top != "nul" {
+		margin-top: $top;
+	}
+
+	@if $right != "nul" {
+		margin-right: $right;
+	}
+
+	@if $bottom != "nul" {
+		margin-bottom: $bottom;
+	}
+
+	@if $left != "nul" {
+		margin-left: $left;
+	}
+}
+@mixin padding($top, $right, $bottom, $left){
+	@if $top != "nul" {
+		padding-top: $top;
+	}
+
+	@if $right != "nul" {
+		padding-right: $right;
+	}
+
+	@if $bottom != "nul" {
+		padding-bottom: $bottom;
+	}
+
+	@if $left != "nul" {
+		padding-left: $left;
+	}
+}
+
+@mixin flex($options){
+	display: flex;
+	display: -ms-flexbox;
+
+	@if $options != "nul" {
+		    flex: $options;
+		-ms-flex: $options;
+	}
+}
+
+@mixin justifyContent($justify){
+	justify-content: $justify;
+	  -ms-flex-pack: $justify;
+}
+
+@mixin alignContent($align){
+	     align-content: $align;
+	-ms-flex-line-pack: $align;
+}
+
+@mixin alignSelf($align){
+	         align-self: $align;
+	-ms-flex-item-align: $align;
+}
+
+@mixin flexDirection($direction){
+	    flex-direction: $direction;
+	-ms-flex-direction: $direction;
 }
 
 @mixin transform($type){
@@ -71,7 +140,6 @@ $sectionContentFonts: $placeholderFonts;
 * {
 	padding: 0;
 	margin: 0;
-	box-sizing: border-box;
 }
 
 html {
@@ -83,14 +151,12 @@ body {
 }
 
 .logoContainer__anchor {
-	display: block;
-	color: black;
-	text-decoration: none;
+	@include alignSelf(center);
 }
 
 .logoContainer__heading {
-	color: #981611;
-	font-family: "Trebuchet MS", "Lucida Grande", Verdana, Arial, Sans-Serif;
+	color: $logoColor;
+	font-family: $logoFonts;
 	font-weight: 700;
 	text-align: center;
 	font-size: 1.5em;
@@ -107,48 +173,44 @@ body {
 }
 
 /* Individual Styles */
-.webContainer {
-	max-width: $webContainerMaxWidth;
-	width: 100vw;
-}
-
 .mainHeader {
-	@include setPos(fixed, 0, nul, nul, 0);
-	display: flex;
+	@include position(fixed, 0, 0, nul, 0);
+	@include flex(nul);
+	@include padding(nul, .25rem, nul, .25rem);
 	width: 100vw;
 	height: $mainHeaderHeight;
 	justify-content: space-around;
 	background-color: $primaryColor;
 }
 
-.mainLogoContainer {
-	display: inline-block;
-	max-width: 300px;
+.logoContainer {
+	@include flex(1 1 auto);
+	@include justifyContent(center);
+	min-width: 300px;
 	width: 80%;
 	margin: 5px;
-	background: url(../img/logo_background.jpg) no-repeat;
+	background: $logo;
 }
 
 .navSlider {
-	@include setPos(fixed, 0, nul, nul, -$navSliderWidth);
+	@include position(fixed, 0, nul, nul, -$navSliderWidth);
 	@include transition(.35s all linear);
 	width: $navSliderWidth;
 	height: 100vh;
 	background-color: $primaryColor;
 
 	header {
-		display: flex;
+		@include flex(nul);
+		@include justifyContent(space-around);
 		width: 100%;
 		height: $mainHeaderHeight;
-		justify-content: space-around;
 		background-color: $secondaryColor;
 
 		.navLogoContainer {
-			display: inline-block;
-			max-width: 280px;
+			min-width: 280px;
 			width: 85%;
 			margin: 5px;
-			background: url(../img/logo_background.jpg) no-repeat;
+			background: $logo;
 		}
 	}
 
@@ -160,62 +222,39 @@ body {
 			list-style: none;
 			text-align: center;
 			font-size: 1.25em;
+			margin-bottom: 0;
 
 			.navSliderList__listItem {
 				width: 100%;
-				height: 7.5vh;
+				height: 7.5%;
 				border-bottom: 1px solid grey;
 
-				a {
+				.navSliderList__anchor {
+					@include position(relative, nul, nul, nul, nul);
+					@include flex(nul);
+					@include flexDirection(column);
 					color: black;
-					text-decoration: none;
-					display: flex;
-					width: 100%;
-					justify-content: center;
-					align-content: center;
-					flex-direction: column;
 					padding: .5em 0;
 
 					.navSliderList__anchorText {
-						display: flex;
+						@include flex(nul);
+						@include justifyContent(center);
 						height: 1.5em;
-						justify-content: center;
 					}
+				}
 
-					.navSliderList__anchorText--withCaret::after {
-						@include fontAwesomeIcon("\f0d7", 1.25em);
-						@include transition(.1s all linear);
-						display: inline-block;
-					}
+				.navSliderList__anchor--withCaret::after {
+					@include fontAwesomeIcon("\f0d7", 1.25em);
+					@include transition(.1s all linear);
+					@include position(absolute, 10%, 0, 0, 82%);
+				}
 
-					.navSliderList__anchorText--withClosedCaret::after {
-						@include transform(translateY(-3px) rotate(-90deg));
-					}
+				.navSliderList__anchor--withClosedCaret::after {
+					@include transform(translateY(-2px) rotate(-90deg));
+				}
 
-					.navSliderList__anchorText--withOpenCaret::after {
-						@include transform(translateY(-3px) rotate(0deg));
-					}
-
-					.navSliderList__anchorText--withDisabledCaret::after {
-						@include transform(translateY(-3px) rotate(-90deg));
-						visibility: hidden;
-					}
-
-					.navSliderList__anchorText--caretFirstPos::after {
-						@include setPos(relative, nul, nul, nul, 30vw);
-					}
-
-					.navSliderList__anchorText--caretSecondPos::after {
-						@include setPos(relative, nul, nul, nul, 25.5vw);
-					}
-
-					.navSliderList__anchorText--caretThirdPos::after {
-						@include setPos(relative, nul, nul, nul, 29.4vw);
-					}
-
-					.navSliderList__anchorText--caretFourthPos::after {
-						@include setPos(relative, nul, nul, nul, 30.4vw);
-					}
+				.navSliderList__anchor--withDisabledCaret::after {
+					display: none;
 				}
 
 				.navSliderNestedList {
@@ -244,7 +283,7 @@ body {
 }
 
 .navFadeOut {
-	@include setPos(fixed, 0, -(100-$navSliderWidth), nul, nul);
+	@include position(fixed, 0, -(100-$navSliderWidth), nul, nul);
 	@include transition(.35s all linear);
 	width: (100 - $navSliderWidth);
 	height: 100vh;
@@ -264,18 +303,18 @@ body {
 		margin-bottom: 5px;
 
 		header {
-			display: flex;
+			@include flex(nul);
+			@include justifyContent(center);
+			@include alignContent(center);
+			@include flexDirection(column);
 			height: 7.5vh;
-			justify-content: center;
-			align-content: center;
-			flex-direction: column;
 			background-color: #d1d1d1;
 
 			h2 {
 				font-family: Arial, sans-serif;
 				text-align: center;
 				line-height: 1.2;
-				font-size: 1.2em;
+				font-size: 1.1em;
 				font-weight: 400;
 			}
 
