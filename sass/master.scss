@@ -4,7 +4,7 @@
 @import "../css/normalize.css";
 
 // Bootstrap
-@import "../css/bootstrap/bootstrap.min.css";
+@import "../css/bootstrap.min.css";
 
 // - FontAwesome
 @import "fontawesome/fontawesome.scss";
@@ -12,29 +12,30 @@
 // @import "fontawesome/regular.scss";
 @import "fontawesome/solid.scss";
 
+
 // Variables
 
-// - Sizing
-$webContainerMaxWidth: 960px;
-$mainHeaderHeight: 50px;
-$navSliderWidth: 90vw;
+//- Sizing
+$headerHeight: 52px;
 
-// - Color
-$primaryColor: #ebebeb;
-$secondaryColor: #d1d1d1;
-$tertiaryColor: #858585;
+//- Colorscheme
+$black: #000;
+$green: #1c1;
+$grey: #617073;
+$blue: #5581c0;
+$white: #fff;
+
+//- Colors
 $logoColor: #981611;
 
-// Fonts
-$placeholderFonts: Arial, sans-serif; // To be removed
-$headingFonts: $placeholderFonts;
-$sectionContentFonts: $placeholderFonts;
+//- Fonts
 $logoFonts: "Trebuchet MS", "Lucida Grande", Verdana, Arial, Sans-Serif;
 
-// Other
-$logo: url(../img/logo_background.jpg) no-repeat;
+//- Other
+$logoBG: url(../img/logo_background.jpg) no-repeat;
 
-// Mixins
+
+//- Mixins
 @mixin position($type, $top, $right, $bottom, $left){
 	position: $type;
 
@@ -54,6 +55,7 @@ $logo: url(../img/logo_background.jpg) no-repeat;
 		left: $left;
 	}
 }
+
 @mixin margin($top, $right, $bottom, $left){
 	@if $top != "nul" {
 		margin-top: $top;
@@ -71,6 +73,7 @@ $logo: url(../img/logo_background.jpg) no-repeat;
 		margin-left: $left;
 	}
 }
+
 @mixin padding($top, $right, $bottom, $left){
 	@if $top != "nul" {
 		padding-top: $top;
@@ -89,6 +92,226 @@ $logo: url(../img/logo_background.jpg) no-repeat;
 	}
 }
 
+@mixin transition($prop){
+	        transition: $prop;
+	-webkit-transition: $prop;
+	    -ms-transition: $prop;
+	   -moz-transition: $prop;
+}
+
+@mixin fontAwesomeIcon($unicode, $fontSize){
+	font-family: "Font Awesome 5 Free";
+	content: $unicode;
+	font-size: $fontSize;
+}
+
+@mixin transform($type){
+	        transform: $type;
+	-webkit-transform: $type;
+	    -ms-transform: $type;
+	   -moz-transform: $type;
+}
+
+
+//- CSS
+/* Default Styles */
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+html {
+	line-height: 1.5;
+}
+
+body {
+	padding-top: $headerHeight;
+	background-color: $grey;
+}
+
+/* CJT Logo */
+.logo {
+	height: 100%;
+	align-content: center;
+	background: $logoBG;
+}
+
+.logo__heading {
+	@include margin(0, nul, 0, nul);
+	color: $logoColor;
+	font-family: $logoFonts;
+	font-size: 1.5em;
+	font-weight: 700;
+	text-align: center;
+	line-height: 200%;
+}
+
+
+/* Specific Styles */
+/* Header */
+.header {
+	@include position(fixed, 0, 0, nul, 0);
+	height: $headerHeight;
+	background-color: $white;
+	z-index: 1;
+}
+
+.header__navControl {
+	@include padding(10px, 5px, 5px, 5px);
+	text-align: center;
+
+	i {
+		font-size: 2.3em;
+	}
+}
+
+.header__navClose {
+	padding-top: 7.5px;
+}
+
+
+/* Slide-out Navigation */
+.navSlider {
+	@include position(fixed, 0, nul, 0, -90vw);
+	@include transition(.35s all linear);
+	width: 90vw;
+	background-color: $grey;
+	z-index: 2;
+}
+
+.navSlider__header {
+	height: $headerHeight;
+	background-color: $white;
+
+	> div {
+		height: 100%;
+	}
+}
+
+.navSlider__nav {
+	padding: 5px;
+
+	a {
+		display: block;
+		color: $black;
+	}
+}
+
+.navSlider__navList {
+	margin-bottom: 0;
+	border-top: 1px solid $black;
+	list-style: none;
+	text-align: center;
+	font-size: 1.1em;
+
+	> li {
+		border-bottom: 1px solid $black;
+		min-height: 40px;
+		height: fit-content;
+		line-height: 40px;
+	}
+}
+
+.navSlider--open {
+	left: 0;
+}
+
+.navSlider__nav--nested {
+	@include position(relative, nul, nul, nul, nul);
+
+	ul {
+		@include transition(.2s all linear);
+		height: 0px;
+		max-height: fit-content;
+		overflow: hidden;
+	}
+}
+
+.navSlider__nav--nested::after {
+	@include position(absolute, 0, nul, nul, 90%);
+	@include fontAwesomeIcon("\f0d7", 1.25em);
+	@include transition(.1s all linear);
+	@include transform(rotate(-90deg));
+}
+
+.navSlider__nav--nestedOpen::after {
+	@include transform(rotate(0deg));
+}
+
+.navSlider__nestedNav--open {
+	height: 20vh !important;
+}
+
+
+/* Slide-out navigation blackout */
+.navFadeOut {
+	@include position(fixed, 0, 0, 0, 100vw);
+	@include transition(.35s all linear);
+	width: 10vw;
+	background-color: $black;
+	opacity: .75;
+	z-index: 2;
+}
+
+.navFadeOut--active {
+	left: 90vw;
+}
+
+
+/* Main page content */
+.mainContent {
+	padding: 5px;
+
+	section:not(:last-child) {
+		margin-bottom: 5px;
+	}
+
+ 	section {
+		border: 2px solid $blue;
+		background-color: $white;
+
+		header {
+			background-color: $blue;
+			text-align: center;
+
+			h2 {
+				margin-bottom: 0;
+				font-family: Arial, sans-serif;
+				font-size: 1.25em;
+			}
+		}
+
+		article {
+			padding: 5px;
+
+			p {
+				margin-bottom: 0;
+			}
+
+			ul {
+				@include margin(nul, nul, 0, 15px);
+				padding-left: 5px;
+			}
+		}
+	}
+}
+
+//- OLD STYLES BELOW
+
+// - Color
+$primaryColor: #ebebeb;
+$secondaryColor: #d1d1d1;
+$tertiaryColor: #858585;
+
+// Fonts
+$placeholderFonts: Arial, sans-serif; // To be removed
+$headingFonts: $placeholderFonts;
+$sectionContentFonts: $placeholderFonts;
+
+// Other
+
+// Mixins
 @mixin flex($options){
 	display: flex;
 	display: -ms-flexbox;
@@ -119,225 +342,11 @@ $logo: url(../img/logo_background.jpg) no-repeat;
 	-ms-flex-direction: $direction;
 }
 
-@mixin transform($type){
-	        transform: $type;
-	-webkit-transform: $type;
-	    -ms-transform: $type;
-	   -moz-transform: $type;
-}
-
-@mixin transition($prop){
-	        transition: $prop;
-	-webkit-transition: $prop;
-	    -ms-transition: $prop;
-	   -moz-transition: $prop;
-}
-
-@mixin fontAwesomeIcon($unicode, $fontSize){
-	font-family: "Font Awesome 5 Free";
-	content: $unicode;
-	font-size: $fontSize;
-}
-
 // CSS
-/* Global Styles */
-* {
-	padding: 0;
-	margin: 0;
-}
-
-html {
-	line-height: 1.5;
-}
-
-body {
-	padding-top: $mainHeaderHeight;
-}
-
-.logoContainer__anchor {
-	@include alignSelf(center);
-}
-
-.logoContainer__heading {
-	color: $logoColor;
-	font-family: $logoFonts;
-	font-weight: 700;
-	text-align: center;
-	font-size: 1.5em;
-	margin: 0;
-}
-
-.navButtonContainer {
-	display: inline-block;
-	padding: 5px;
-
-	i {
-		font-size: 2.45em;
-	}
-}
-
 /* Individual Styles */
-.mainHeader {
-	@include position(fixed, 0, 0, nul, 0);
-	@include flex(nul);
-	@include padding(nul, .25rem, nul, .25rem);
-	width: 100vw;
-	height: $mainHeaderHeight;
-	justify-content: space-around;
-	background-color: $primaryColor;
-}
-
-.logoContainer {
-	@include flex(1 1 auto);
-	@include justifyContent(center);
-	min-width: 300px;
-	width: 80%;
-	margin: 5px;
-	background: $logo;
-}
-
-.navSlider {
-	@include position(fixed, 0, nul, nul, -$navSliderWidth);
-	@include transition(.35s all linear);
-	width: $navSliderWidth;
-	height: 100vh;
-	background-color: $primaryColor;
-
-	header {
-		@include flex(nul);
-		@include justifyContent(space-around);
-		width: 100%;
-		height: $mainHeaderHeight;
-		background-color: $secondaryColor;
-
-		.navLogoContainer {
-			min-width: 280px;
-			width: 85%;
-			margin: 5px;
-			background: $logo;
-		}
-	}
-
-	.navSlider__content {
-		width: 100%;
-		height: fit-content;
-
-		.navSliderList {
-			list-style: none;
-			text-align: center;
-			font-size: 1.25em;
-			margin-bottom: 0;
-
-			.navSliderList__listItem {
-				width: 100%;
-				height: 7.5%;
-				border-bottom: 1px solid grey;
-
-				.navSliderList__anchor {
-					@include position(relative, nul, nul, nul, nul);
-					@include flex(nul);
-					@include flexDirection(column);
-					color: black;
-					padding: .5em 0;
-
-					.navSliderList__anchorText {
-						@include flex(nul);
-						@include justifyContent(center);
-						height: 1.5em;
-					}
-				}
-
-				.navSliderList__anchor--withCaret::after {
-					@include fontAwesomeIcon("\f0d7", 1.25em);
-					@include transition(.1s all linear);
-					@include position(absolute, 10%, 0, 0, 82%);
-				}
-
-				.navSliderList__anchor--withClosedCaret::after {
-					@include transform(translateY(-2px) rotate(-90deg));
-				}
-
-				.navSliderList__anchor--withDisabledCaret::after {
-					display: none;
-				}
-
-				.navSliderNestedList {
-					display: none;
-					font-size: 1em;
-
-					.navSliderNestedList__listItem {
-						border: 0;
-					}
-				}
-
-				.navSliderNestedList--open {
-					display: block;
-				}
-			}
-
-			.navSliderList__listItem--openNest {
-				height: fit-content;
-			}
-		}
-	}
-}
-
-.navSlider--open {
-	left: 0;
-}
-
-.navFadeOut {
-	@include position(fixed, 0, -(100-$navSliderWidth), nul, nul);
-	@include transition(.35s all linear);
-	width: (100 - $navSliderWidth);
-	height: 100vh;
-	background-color: black;
-	opacity: .75;
-}
-
-.navFadeOut--active {
-	right: 0;
-}
-
 .mainContent {
-	margin: 5px;
-
 	> section {
-		background-color: #ebebeb;
-		margin-bottom: 5px;
-
-		> header {
-			@include flex(nul);
-			@include justifyContent(center);
-			@include alignContent(center);
-			@include flexDirection(column);
-			height: 7.5vh;
-			background-color: #d1d1d1;
-
-			> h2 {
-				font-family: Arial, sans-serif;
-				text-align: center;
-				line-height: 1.2;
-				font-size: 1.1em;
-				font-weight: 400;
-				margin-bottom: 0;
-			}
-		}
-
 		> div {
-			font-family: Arial, sans-serif;
-			text-align: justify;
-			padding: 5px;
-
-			p {
-				margin-bottom: 0;
-			}
-
-			ul {
-				@include margin(nul, nul, 0, 15px);
-				padding-left: 5px;
-			}
-
 			q {
 				font-style: italic;
 			}

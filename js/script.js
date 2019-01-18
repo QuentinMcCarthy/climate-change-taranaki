@@ -1,19 +1,15 @@
 $(document).ready(function(){
 	// Slide Nav
-	$(".navButtonContainer").click(function(){
+	$(".header__navControl, .navFadeOut").click(function(){
 		$(".navSlider").toggleClass("navSlider--open");
 		$(".navFadeOut").toggleClass("navFadeOut--active");
 	});
 
 	// Nested Navigation
-	$("li[data-nest='true']").click(function(){
+	$(".navSlider__nav--nested").click(function(){
 		$(this)
-			.toggleClass("navSliderList__listItem--openNest")
-			.find(".navSliderList__anchor")
-				.toggleClass("navSliderList__anchor--withClosedCaret")
-				.end()
-			.find(".navSliderNestedList")
-				.toggleClass("navSliderNestedList--open")
-				.end()
+			.toggleClass("navSlider__nav--nestedOpen")
+			.find("ul")
+				.toggleClass("navSlider__nestedNav--open")
 	});
 });

@@ -9,141 +9,134 @@
 	</head>
 	<body>
 		<div class="container">
-			<header class="mainHeader">
-				<div class="navButtonContainer">
-					<i class="fas fa-bars"></i>
-				</div>
+			<header class="header">
+				<div class="row no-gutters">
+					<div class="col-2">
+						<div class="header__navControl">
+							<i class="fas fa-bars fa-2x"></i>
+						</div>
+					</div>
 
-				<div class="logoContainer">
-					<a class="logoContainer__anchor" href="index.html" title="Home">
-						<h1 class="logoContainer__heading">Climate Justice Taranaki</h1>
-					</a>
+					<div class="col-10">
+						<div class="logo">
+							<a class="logo__anchor" href="index.html" title="Home">
+								<h1 class="logo__heading">Climate Justice Taranaki</h1>
+							</a>
+						</div>
+					</div>
 				</div>
 			</header>
 
 			<div class="navSlider">
-				<header>
-					<div class="logoContainer navLogoContainer">
-						<a class="logoContainer__anchor" href="index.html">
-							<h2 class="logoContainer__heading">Climate Justice Taranaki</h2>
-						</a>
-					</div>
+				<header class="navSlider__header ">
+					<div class="row no-gutters">
+						<div class="col-10">
+							<div class="logo">
+								<a class="logo__anchor" href="index.html" title="Home">
+									<h1 class="logo__heading">Climate Justice Taranaki</h1>
+								</a>
+							</div>
+						</div>
 
-					<div class="navButtonContainer">
-							<i class="fas fa-arrow-left"></i>
+						<div class="col-2">
+							<div class="header__navControl header__navClose">
+								<i class="fas fa-arrow-left fa-2x"></i>
+							</div>
+						</div>
 					</div>
 				</header>
 
-				<div class="navSlider__content">
-					<div>
-						<ul class="navSliderList">
-							<li class="navSliderList__listItem" data-nest="true">
-								<a class="navSliderList__anchor navSliderList__anchor--withCaret navSliderList__anchor--withClosedCaret">
-									<span class="navSliderList__anchorText">About</span>
-								</a>
+				<nav class="navSlider__nav">
+					<div class="row no-gutters">
+						<div class="col">
+							<ul class="navSlider__navList">
+								<li class="navSlider__nav--nested">
+									<span>About</span>
 
-								<ul class="navSliderList navSliderNestedList">
-									<li class="navSliderList__listItem navSliderNestedList__listItem">
-										<a href="about.html" class="navSliderList__anchor">
-											<span class="navSliderList__anchorText">About</span>
-										</a>
-									</li>
+									<ul>
+										<li>
+											<a href="about.html">About</a>
+										</li>
+										<li>
+											<a href="faq.html">FAQ</a>
+										</li>
+										<li>
+											<a href="contact.html">Contact</a>
+										</li>
+									</ul>
+								</li>
+								<li class="navSlider__nav--nested">
+									<span>Resources</span>
 
-									<li class="navSliderList__listItem navSliderNestedList__listItem">
-										<a href="faq.html" class="navSliderList__anchor">
-											<span class="navSliderList__anchorText">FAQ</span>
-										</a>
-									</li>
-
-									<li class="navSliderList__listItem navSliderNestedList__listItem">
-										<a href="contact.html" class="navSliderList__anchor">
-											<span class="navSliderList__anchorText">Contact</span>
-										</a>
-									</li>
-								</ul>
-							</li>
-
-							<li class="navSliderList__listItem" data-nest="true">
-								<a class="navSliderList__anchor navSliderList__anchor--withCaret navSliderList__anchor--withClosedCaret">
-									<span class="navSliderList__anchorText">Resources</span>
-								</a>
-
-								<ul class="navSliderList navSliderNestedList">
-									<li class="nnavSliderList__listItem avSliderNestedList__listItem">
-										<a href="stories.html" class="navSliderList__anchor">
-											<span class="navSliderList__anchorText">People Stories</span>
-										</a>
-									</li>
-
-									<li class="navSliderList__listItem navSliderNestedList__listItem">
-										<a href="videos.html" class="navSliderList__anchor">
-											<span class="navSliderList__anchorText">Videos</span>
-										</a>
-									</li>
-
-									<li class="navSliderList__listItem navSliderNestedList__listItem">
-										<a href="climate.html" class="navSliderList__anchor">
-											<span class="navSliderList__anchorText">Climate Change</span>
-										</a>
-									</li>
-								</ul>
-							</li>
-
-							<li class="navSliderList__listItem" data-nest="false">
-								<a href="events.html" class="navSliderList__anchor navSliderList__anchor--withCaret navSliderList__anchor--withClosedCaret navSliderList__anchor--withDisabledCaret">
-									<span class="navSliderList__anchorText">Events</span>
-								</a>
-							</li>
-
-							<li class="navSliderList__listItem" data-nest="false">
-								<a href="links.html" class="navSliderList__anchor navSliderList__anchor--withCaret navSliderList__anchor--withClosedCaret navSliderList__anchor--withDisabledCaret">
-									<span class="navSliderList__anchorText">Links</span>
-								</a>
-							</li>
-						</ul>
+									<ul>
+										<li>
+											<a href="peoplestories.html">People Stories</a>
+										</li>
+										<li>
+											<a href="videos.html">Videos</a>
+										</li>
+										<li>
+											<a href="climatechange.html">Climate Change</a>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<span>Events</span>
+								</li>
+								<li>
+									<span>Links</span>
+								</li>
+							</ul>
+						</div>
 					</div>
-				</div>
+				</nav>
 			</div>
 
 			<div class="navFadeOut"></div>
 
 			<main class="mainContent">
-				<section>
-					<header>
-						<h2 class="text-uppercase">Welcome<br>to our website</h2>
-					</header>
+				<div class="row">
+					<div class="col">
+						<section>
+							<header>
+								<h2 class="text-uppercase">Welcome<br>to our website</h2>
+							</header>
 
-					<div>
-						<p>Kia Ora, Climate Justice Taranaki is a community group dedicated to justice, resistance, education and positive action at the front lines of climate change.</p>
+							<article>
+								<p>Kia Ora, Climate Justice Taranaki is a community group dedicated to justice, resistance, education and positive action at the front lines of climate change.</p>
+							</article>
+						</section>
+
+						<section>
+							<header>
+								<h2>Recent Posts</h2>
+							</header>
+
+							<article>
+								<ul>
+									<li>
+										<a href="#">Media Release: Taranaki people headed for Petroleum Conference blockage</a>
+									</li>
+									<li>
+										<a href="#">Press Release: Climate Justice Taranaki vindicated by the Advertising Standard Authority</a>
+									</li>
+									<li>
+										<a href="#">Press Release: Electricarna - Sat 24 February</a>
+									</li>
+									<li>
+										<a href="#">Press Release: Ocean Killers: OMV, Schlumberger, Amazon Warrior</a>
+									</li>
+									<li>
+										<a href="#">Photos from the Rally on the Water</a>
+									</li>
+								</ul>
+							</article>
+						</section>
 					</div>
-				</section>
+				</div>
+			</main>
 
-				<section>
-					<header>
-						<h2>Recent Posts</h2>
-					</header>
-
-					<div class="mainContent__content--noAlign">
-						<ul>
-							<li>
-								<a href="#">Media Release: Taranaki people headed for Petroleum Conference blockage</a>
-							</li>
-							<li>
-								<a href="#">Press Release: Climate Justice Taranaki vindicated by the Advertising Standard Authority</a>
-							</li>
-							<li>
-								<a href="#">Press Release: Electricarna - Sat 24 February</a>
-							</li>
-							<li>
-								<a href="#">Press Release: Ocean Killers: OMV, Schlumberger, Amazon Warrior</a>
-							</li>
-							<li>
-								<a href="#">Photos from the Rally on the Water</a>
-							</li>
-						</ul>
-					</div>
-				</section>
-
+			<main class="mainContent">
 				<section>
 					<header>
 						<h2>Media Release: Taranaki people headed for Petroleum Conference blockade</h2>
