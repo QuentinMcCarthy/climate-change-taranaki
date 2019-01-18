@@ -13,7 +13,6 @@
 $webContainerMaxWidth: 960px;
 $mainHeaderHeight: 50px;
 $navSliderWidth: 90vw;
-$footerInputHeight: 4vh;
 
 // - Color
 $primaryColor: #ebebeb;
@@ -298,11 +297,11 @@ body {
 .mainContent {
 	margin: 5px;
 
-	section {
+	> section {
 		background-color: #ebebeb;
 		margin-bottom: 5px;
 
-		header {
+		> header {
 			@include flex(nul);
 			@include justifyContent(center);
 			@include alignContent(center);
@@ -310,27 +309,28 @@ body {
 			height: 7.5vh;
 			background-color: #d1d1d1;
 
-			h2 {
+			> h2 {
 				font-family: Arial, sans-serif;
 				text-align: center;
 				line-height: 1.2;
 				font-size: 1.1em;
 				font-weight: 400;
-			}
-
-			.mainContent__welcomeHeading {
-				text-transform: uppercase;
+				margin-bottom: 0;
 			}
 		}
 
-		div {
+		> div {
 			font-family: Arial, sans-serif;
 			text-align: justify;
 			padding: 5px;
 
+			p {
+				margin-bottom: 0;
+			}
+
 			ul {
-				margin-left: 5%;
-				padding-left: 1.5%;
+				@include margin(nul, nul, 0, 15px);
+				padding-left: 5px;
 			}
 
 			q {
@@ -351,61 +351,52 @@ body {
 }
 
 .mainFooter {
-	max-height: 400px;
-	height: 60vh;
+	@include padding(nul, 5px, nul, 5px);
 	background-color: $tertiaryColor;
-	padding: 5px;
 
-	div {
-		border-bottom: 1px solid black;
-		text-align: center;
+	> div {
+		padding-top: 5px;
 		padding-bottom: 5px;
+		text-align: center;
 
-		.mainFooter__subscribeHeading {
-			text-align: left;
-			margin-left: 5px;
+		button {
+			background-color: $primaryColor;
 		}
+	}
 
-		input {
-			height: $footerInputHeight;
-			font-size: 1em;
-		}
+	.mainFooter__search {
+		display: flex;
+		justify-content: center;
 
-		.mainFooter__searchInput {
+		> input {
 			width: 85%;
 		}
 
-		.mainFooter__subscribeInput {
-			width: 97.5%;
+		> button {
+			padding-left: 5px;
+			padding-right: 5px;
+		}
+	}
+
+	.mainFooter__subscribe {
+		> input {
+			width: 95%;
+			height: 25px;
 		}
 
-		button {
-			height: $footerInputHeight;
-			font-size: 1em;
-			background-color: $primaryColor;
-			border-radius: 0;
-		}
-
-		.mainFooter__searchButton {
-			width: 12.5%;
-			margin-left: -4px;
-		}
-
-		.mainFooter__subscribeButton {
-			width: 97.5%;
-		}
-
-		ul {
-			margin-left: 20px;
-
-			a {
-				display: block;
-			}
+		> button {
+			width: 95%;
+			height: 25px;
 		}
 	}
 
 	.mainFooter__sitemap {
 		text-align: initial;
 		font-size: 1.1em;
+
+		ul {
+			@include margin(nul, nul, 0, 15px);
+			padding-left: 10px;
+		}
 	}
 }

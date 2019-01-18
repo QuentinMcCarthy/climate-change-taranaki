@@ -4135,10 +4135,10 @@ body {
 
 .mainContent {
   margin: 5px; }
-  .mainContent section {
+  .mainContent > section {
     background-color: #ebebeb;
     margin-bottom: 5px; }
-    .mainContent section header {
+    .mainContent > section > header {
       display: flex;
       display: -ms-flexbox;
       justify-content: center;
@@ -4149,65 +4149,62 @@ body {
       -ms-flex-direction: column;
       height: 7.5vh;
       background-color: #d1d1d1; }
-      .mainContent section header h2 {
+      .mainContent > section > header > h2 {
         font-family: Arial, sans-serif;
         text-align: center;
         line-height: 1.2;
         font-size: 1.1em;
-        font-weight: 400; }
-      .mainContent section header .mainContent__welcomeHeading {
-        text-transform: uppercase; }
-    .mainContent section div {
+        font-weight: 400;
+        margin-bottom: 0; }
+    .mainContent > section > div {
       font-family: Arial, sans-serif;
       text-align: justify;
       padding: 5px; }
-      .mainContent section div ul {
-        margin-left: 5%;
-        padding-left: 1.5%; }
-      .mainContent section div q {
+      .mainContent > section > div p {
+        margin-bottom: 0; }
+      .mainContent > section > div ul {
+        margin-bottom: 0;
+        margin-left: 15px;
+        padding-left: 5px; }
+      .mainContent > section > div q {
         font-style: italic; }
-      .mainContent section div .mainContent__postDate {
+      .mainContent > section > div .mainContent__postDate {
         font-size: .9em;
         font-style: italic;
         margin-bottom: 5px; }
-    .mainContent section .mainContent__content--noAlign {
+    .mainContent > section .mainContent__content--noAlign {
       text-align: initial; }
 
 .mainFooter {
-  max-height: 400px;
-  height: 60vh;
-  background-color: #858585;
-  padding: 5px; }
-  .mainFooter div {
-    border-bottom: 1px solid black;
-    text-align: center;
-    padding-bottom: 5px; }
-    .mainFooter div .mainFooter__subscribeHeading {
-      text-align: left;
-      margin-left: 5px; }
-    .mainFooter div input {
-      height: 4vh;
-      font-size: 1em; }
-    .mainFooter div .mainFooter__searchInput {
+  padding-right: 5px;
+  padding-left: 5px;
+  background-color: #858585; }
+  .mainFooter > div {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: center; }
+    .mainFooter > div button {
+      background-color: #ebebeb; }
+  .mainFooter .mainFooter__search {
+    display: flex;
+    justify-content: center; }
+    .mainFooter .mainFooter__search > input {
       width: 85%; }
-    .mainFooter div .mainFooter__subscribeInput {
-      width: 97.5%; }
-    .mainFooter div button {
-      height: 4vh;
-      font-size: 1em;
-      background-color: #ebebeb;
-      border-radius: 0; }
-    .mainFooter div .mainFooter__searchButton {
-      width: 12.5%;
-      margin-left: -4px; }
-    .mainFooter div .mainFooter__subscribeButton {
-      width: 97.5%; }
-    .mainFooter div ul {
-      margin-left: 20px; }
-      .mainFooter div ul a {
-        display: block; }
+    .mainFooter .mainFooter__search > button {
+      padding-left: 5px;
+      padding-right: 5px; }
+  .mainFooter .mainFooter__subscribe > input {
+    width: 95%;
+    height: 25px; }
+  .mainFooter .mainFooter__subscribe > button {
+    width: 95%;
+    height: 25px; }
   .mainFooter .mainFooter__sitemap {
     text-align: initial;
     font-size: 1.1em; }
+    .mainFooter .mainFooter__sitemap ul {
+      margin-bottom: 0;
+      margin-left: 15px;
+      padding-left: 10px; }
 
 /*# sourceMappingURL=master.css.map */
