@@ -4205,6 +4205,9 @@ body {
   align-content: center;
   background: url(../img/logo_background.jpg) top left/cover no-repeat; }
 
+.logo__anchor {
+  display: block; }
+
 .logo__heading {
   margin-top: 0;
   margin-bottom: 0;
@@ -4213,7 +4216,7 @@ body {
   font-size: 1.5em;
   font-weight: 700;
   text-align: center;
-  line-height: 200%; }
+  line-height: 52px; }
 
 /* Specific Styles */
 /* Header */
@@ -4413,5 +4416,17 @@ body {
 @media (min-width: 768px) and (max-width: 991.98px) {
   .navSlider__nav--nested::after {
     left: 95%; } }
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  body {
+    padding-top: 104px; }
+
+  .header {
+    height: 104px; }
+
+  .header__navControl {
+    display: none; }
+
+  .logo__heading {
+    line-height: 104px; } }
 
 /*# sourceMappingURL=master.css.map */

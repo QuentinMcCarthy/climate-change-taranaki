@@ -139,6 +139,10 @@ body {
 	background: $logoBG;
 }
 
+.logo__anchor {
+	display: block;
+}
+
 .logo__heading {
 	@include margin(0, nul, 0, nul);
 	color: $logoColor;
@@ -146,7 +150,7 @@ body {
 	font-size: 1.5em;
 	font-weight: 700;
 	text-align: center;
-	line-height: 200%;
+	line-height: $headerHeight;
 }
 
 
@@ -371,5 +375,23 @@ body {
 @media (min-width: 768px) and (max-width: 991.98px) {
 	.navSlider__nav--nested::after {
 		left: 95%;
+	}
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+	body {
+		padding-top: ($headerHeight * 2);
+	}
+
+	.header {
+		height: ($headerHeight * 2);
+	}
+
+	.header__navControl {
+		display: none;
+	}
+
+	.logo__heading {
+		line-height: ($headerHeight * 2);
 	}
 }
