@@ -4355,47 +4355,28 @@ body {
         margin-bottom: 0;
         margin-left: 15px;
         padding-left: 5px; }
+      .mainContent section article span {
+        font-size: .9em;
+        font-style: italic;
+        margin-bottom: 5px; }
 
-/* Individual Styles */
-.mainContent > section > div q {
-  font-style: italic; }
-.mainContent > section > div .mainContent__postDate {
-  font-size: .9em;
-  font-style: italic;
-  margin-bottom: 5px; }
-.mainContent > section .mainContent__content--noAlign {
-  text-align: initial; }
-
-.mainFooter {
-  padding-right: 5px;
-  padding-left: 5px;
-  background-color: #858585; }
-  .mainFooter > div {
-    padding-top: 5px;
-    padding-bottom: 5px;
-    text-align: center; }
-    .mainFooter > div button {
-      background-color: #ebebeb; }
-  .mainFooter .mainFooter__search {
-    display: flex;
-    justify-content: center; }
-    .mainFooter .mainFooter__search > input {
-      width: 85%; }
-    .mainFooter .mainFooter__search > button {
-      padding-left: 5px;
-      padding-right: 5px; }
-  .mainFooter .mainFooter__subscribe > input {
-    width: 95%;
-    height: 25px; }
-  .mainFooter .mainFooter__subscribe > button {
-    width: 95%;
-    height: 25px; }
-  .mainFooter .mainFooter__sitemap {
-    text-align: initial;
-    font-size: 1.1em; }
-    .mainFooter .mainFooter__sitemap ul {
-      margin-bottom: 0;
-      margin-left: 15px;
-      padding-left: 10px; }
+.footer {
+  margin-top: 5px;
+  margin-right: 5px;
+  margin-left: 5px;
+  padding: 5px;
+  background-color: #fff; }
+  .footer > .row > .col > div:not(:last-child) {
+    margin-bottom: 5px;
+    border-bottom: 1px solid #000;
+    padding-bottom: 5px; }
+  .footer > .row > .col .btn {
+    color: #fff;
+    background-color: #5581c0;
+    border-color: #5581c0; }
+  .footer > .row > .col ul {
+    margin-bottom: 0;
+    margin-left: 15px;
+    padding-left: 5px; }
 
 /*# sourceMappingURL=master.css.map */

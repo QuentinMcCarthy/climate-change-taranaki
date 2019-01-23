@@ -293,124 +293,37 @@ body {
 				@include margin(nul, nul, 0, 15px);
 				padding-left: 5px;
 			}
-		}
-	}
-}
 
-//- OLD STYLES BELOW
-
-// - Color
-$primaryColor: #ebebeb;
-$secondaryColor: #d1d1d1;
-$tertiaryColor: #858585;
-
-// Fonts
-$placeholderFonts: Arial, sans-serif; // To be removed
-$headingFonts: $placeholderFonts;
-$sectionContentFonts: $placeholderFonts;
-
-// Other
-
-// Mixins
-@mixin flex($options){
-	display: flex;
-	display: -ms-flexbox;
-
-	@if $options != "nul" {
-		    flex: $options;
-		-ms-flex: $options;
-	}
-}
-
-@mixin justifyContent($justify){
-	justify-content: $justify;
-	  -ms-flex-pack: $justify;
-}
-
-@mixin alignContent($align){
-	     align-content: $align;
-	-ms-flex-line-pack: $align;
-}
-
-@mixin alignSelf($align){
-	         align-self: $align;
-	-ms-flex-item-align: $align;
-}
-
-@mixin flexDirection($direction){
-	    flex-direction: $direction;
-	-ms-flex-direction: $direction;
-}
-
-// CSS
-/* Individual Styles */
-.mainContent {
-	> section {
-		> div {
-			q {
-				font-style: italic;
-			}
-
-			.mainContent__postDate {
+			span {
 				font-size: .9em;
 				font-style: italic;
 				margin-bottom: 5px;
 			}
 		}
-
-		.mainContent__content--noAlign {
-			text-align: initial;
-		}
 	}
 }
 
-.mainFooter {
-	@include padding(nul, 5px, nul, 5px);
-	background-color: $tertiaryColor;
+.footer {
+	@include margin(5px, 5px, nul, 5px);
+	padding: 5px;
+	background-color: $white;
 
-	> div {
-		padding-top: 5px;
-		padding-bottom: 5px;
-		text-align: center;
-
-		button {
-			background-color: $primaryColor;
-		}
-	}
-
-	.mainFooter__search {
-		display: flex;
-		justify-content: center;
-
-		> input {
-			width: 85%;
+	> .row > .col {
+		> div:not(:last-child) {
+			margin-bottom: 5px;
+			border-bottom: 1px solid $black;
+			padding-bottom: 5px;
 		}
 
-		> button {
-			padding-left: 5px;
-			padding-right: 5px;
+		.btn {
+			color: $white;
+			background-color: $blue;
+			border-color: $blue;
 		}
-	}
-
-	.mainFooter__subscribe {
-		> input {
-			width: 95%;
-			height: 25px;
-		}
-
-		> button {
-			width: 95%;
-			height: 25px;
-		}
-	}
-
-	.mainFooter__sitemap {
-		text-align: initial;
-		font-size: 1.1em;
 
 		ul {
 			@include margin(nul, nul, 0, 15px);
-			padding-left: 10px;
+			padding-left: 5px;
 		}
 	}
 }
