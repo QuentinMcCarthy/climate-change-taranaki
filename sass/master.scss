@@ -32,7 +32,7 @@ $logoColor: #981611;
 $logoFonts: "Trebuchet MS", "Lucida Grande", Verdana, Arial, Sans-Serif;
 
 //- Other
-$logoBG: url(../img/logo_background.jpg) no-repeat;
+$logoBG: url(../img/logo_background.jpg) top left / cover no-repeat;
 
 
 //- Mixins

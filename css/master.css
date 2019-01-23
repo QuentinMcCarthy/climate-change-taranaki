@@ -4203,7 +4203,7 @@ body {
   height: 100%;
   -ms-flex-line-pack: center;
   align-content: center;
-  background: url(../img/logo_background.jpg) no-repeat; }
+  background: url(../img/logo_background.jpg) top left/cover no-repeat; }
 
 .logo__heading {
   margin-top: 0;
