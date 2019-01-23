@@ -118,7 +118,8 @@ $logoBG: url(../img/logo_background.jpg) no-repeat;
 * {
 	padding: 0;
 	margin: 0;
-	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
 }
 
 html {
@@ -133,7 +134,8 @@ body {
 /* CJT Logo */
 .logo {
 	height: 100%;
-	align-content: center;
+	-ms-flex-line-pack: center;
+	    align-content: center;
 	background: $logoBG;
 }
 
@@ -208,6 +210,8 @@ body {
 	> li {
 		border-bottom: 1px solid $black;
 		min-height: 40px;
+		height: -webkit-fit-content;
+		height: -moz-fit-content;
 		height: fit-content;
 		line-height: 40px;
 	}
@@ -223,6 +227,8 @@ body {
 	ul {
 		@include transition(.2s all linear);
 		height: 0px;
+		max-height: -webkit-fit-content;
+		max-height: -moz-fit-content;
 		max-height: fit-content;
 		overflow: hidden;
 	}
