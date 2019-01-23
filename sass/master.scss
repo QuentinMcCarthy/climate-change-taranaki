@@ -258,51 +258,84 @@ body {
 	left: 90vw;
 }
 
-
-/* Main page content */
-.mainContent {
+/* Sidebar */
+.sidebar {
 	padding: 5px;
+}
 
-	section:not(:last-child) {
-		margin-bottom: 5px;
+.sidebar__content:not(:last-child) {
+	margin-bottom: 5px;
+}
+
+.sidebar__content {
+	border: 2px solid $blue;
+	background-color: $white;
+
+	.sidebar__contentHeading {
+		background-color: $blue;
+		text-align: center;
+
+		h2 {
+			margin-bottom: 0;
+			font-family: Arial, sans-serif;
+			font-size: 1.25em;
+		}
 	}
 
- 	section {
-		border: 2px solid $blue;
-		background-color: $white;
+	div:not(.sidebar__contentHeading) {
+		padding: 5px;
 
-		header {
-			background-color: $blue;
-			text-align: center;
-
-			h2 {
-				margin-bottom: 0;
-				font-family: Arial, sans-serif;
-				font-size: 1.25em;
-			}
+		p {
+			margin-bottom: 0;
 		}
 
-		article {
-			padding: 5px;
-
-			p {
-				margin-bottom: 0;
-			}
-
-			ul {
-				@include margin(nul, nul, 0, 15px);
-				padding-left: 5px;
-			}
-
-			span {
-				font-size: .9em;
-				font-style: italic;
-				margin-bottom: 5px;
-			}
+		ul {
+			@include margin(nul, nul, 0, 15px);
+			padding-left: 5px;
 		}
 	}
 }
 
+/* Main page content */
+.mainContent {
+	padding: 5px;
+}
+
+.mainContent__content:not(:last-child) {
+	margin-bottom: 5px;
+}
+
+.mainContent__content {
+	border: 2px solid $blue;
+	background-color: $white;
+
+	.mainContent__contentHeading {
+		background-color: $blue;
+		text-align: center;
+
+		h2 {
+			margin-bottom: 0;
+			font-family: Arial, sans-serif;
+			font-size: 1.25em;
+		}
+	}
+
+	div:not(.mainContent__contentHeading) {
+		padding: 5px;
+
+		p {
+			margin-bottom: 0;
+		}
+
+		span {
+			font-size: .9em;
+			font-style: italic;
+			margin-bottom: 5px;
+		}
+	}
+}
+
+/* Footer */
 .footer {
 	@include margin(5px, 5px, nul, 5px);
 	padding: 5px;
@@ -325,5 +358,12 @@ body {
 			@include margin(nul, nul, 0, 15px);
 			padding-left: 5px;
 		}
+	}
+}
+
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+	.navSlider__nav--nested::after {
+		left: 95%;
 	}
 }
