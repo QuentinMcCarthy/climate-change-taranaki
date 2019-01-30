@@ -4406,7 +4406,7 @@ body {
   margin-left: 5px;
   padding: 5px;
   background-color: #fff; }
-  .footer > .row > .col > div:not(:last-child) {
+  .footer > .row > .col > div:nth-child(even) {
     margin-bottom: 5px;
     border-bottom: 1px solid #000;
     padding-bottom: 5px; }
@@ -4436,6 +4436,21 @@ body {
     display: none; }
 
   .logo__heading {
-    line-height: 104px; } }
+    line-height: 104px; }
+
+  .footer > .row > .col > div:nth-child(even) {
+    margin-right: 5px;
+    margin-bottom: 0;
+    padding-right: 5px;
+    padding-bottom: 0;
+    border-right: 1px solid #000;
+    border-bottom: 0;
+    height: 100%; }
+  .footer > .row > .col > div:nth-child(odd):not(:last-child) {
+    width: 36.25%; }
+  .footer > .row > .col > div:last-child {
+    width: 25%; }
+  .footer > .row > .col > div {
+    float: left; } }
 
 /*# sourceMappingURL=master.css.map */

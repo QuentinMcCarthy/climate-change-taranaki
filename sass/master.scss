@@ -359,7 +359,7 @@ body {
 	background-color: $white;
 
 	> .row > .col {
-		> div:not(:last-child) {
+		> div:nth-child(even) {
 			margin-bottom: 5px;
 			border-bottom: 1px solid $black;
 			padding-bottom: 5px;
@@ -404,5 +404,31 @@ body {
 
 	.logo__heading {
 		line-height: ($headerHeight * 2);
+	}
+
+	.footer > .row > .col {
+		> div:nth-child(even) {
+			@include margin(nul, 5px, 0, nul);
+			@include padding(nul, 5px, 0, nul);
+			border-right: 1px solid $black;
+			border-bottom: 0;
+			height: 100%;
+		}
+
+		> div:nth-child(odd):not(:last-child) {
+			width: 36.25%;
+		}
+
+		> div:last-child {
+			width: 25%;
+		}
+
+		// > div:nth-child(odd) {
+		// 	width: 32.5%;
+		// }
+
+		> div {
+			float: left;
+		}
 	}
 }
