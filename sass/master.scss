@@ -26,7 +26,7 @@ $logoColor: #981611;
 $logoFonts: "Trebuchet MS", "Lucida Grande", Verdana, Arial, Sans-Serif;
 
 //- Other
-$logoBG: url(../img/logo_background.jpg) top left / cover no-repeat;
+$logoBG: url(../img/logo_background.jpg) bottom center / cover no-repeat;
 
 
 //- Mixins
@@ -395,7 +395,7 @@ body {
 	}
 
 	.header {
-		height: ($headerHeight * 2);
+		height: (($headerHeight * 2) + 50px);
 	}
 
 	.header__navControl {
@@ -430,5 +430,19 @@ body {
 		> div {
 			float: left;
 		}
+	}
+}
+
+@media (min-width: 1200px) {
+	body {
+		padding-top: (($headerHeight * 4) + 50px);
+	}
+
+	.header {
+		height: (($headerHeight * 4) + 50px);
+	}
+
+	.logo__heading {
+		line-height: ($headerHeight * 4); // 225
 	}
 }
