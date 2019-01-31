@@ -4405,6 +4405,11 @@ body {
     margin-top: 5px;
     margin-bottom: 5px;
     max-width: 100%; }
+  .mainContent__content .questionHeading {
+    margin-bottom: 0;
+    font-family: Arial, sans-serif;
+    font-size: 1em;
+    font-weight: bold; }
 
 /* Footer */
 .footer {

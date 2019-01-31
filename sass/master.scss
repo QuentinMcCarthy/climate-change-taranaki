@@ -360,6 +360,13 @@ body {
 		@include margin(5px, nul, 5px, nul);
 		max-width: 100%;
 	}
+
+	.questionHeading {
+		margin-bottom: 0;
+		font-family: Arial, sans-serif;
+		font-size: 1em;
+		font-weight: bold;
+	}
 }
 
 /* Footer */
