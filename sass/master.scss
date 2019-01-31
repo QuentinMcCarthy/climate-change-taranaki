@@ -357,6 +357,7 @@ body {
 
 	img {
 		@include margin(5px, nul, 5px, nul);
+		max-width: 100%;
 	}
 }
 
@@ -365,6 +366,7 @@ body {
 	@include margin(5px, 5px, nul, 5px);
 	padding: 5px;
 	background-color: $white;
+	min-height: 125px;
 
 	> .row > .col {
 		> div:nth-child(even) {
@@ -405,6 +407,7 @@ body {
 			border-right: 1px solid $black;
 			border-bottom: 0;
 			height: 100%;
+			min-height: 115px;
 		}
 
 		> div {
