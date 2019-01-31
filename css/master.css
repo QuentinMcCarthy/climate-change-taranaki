@@ -4426,17 +4426,8 @@ body {
   .navSlider__nav--nested::after {
     left: 95%; } }
 @media (min-width: 992px) {
-  body {
-    padding-top: 154px; }
-
-  .header {
-    height: 154px; }
-
   .header__navControl {
     display: none; }
-
-  .logo__heading {
-    line-height: 104px; }
 
   .footer > .row > .col > div:nth-child(even) {
     margin-right: 5px;
@@ -4446,12 +4437,22 @@ body {
     border-right: 1px solid #000;
     border-bottom: 0;
     height: 100%; }
+  .footer > .row > .col > div {
+    float: left; } }
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  body {
+    padding-top: 154px; }
+
+  .header {
+    height: 154px; }
+
+  .logo__heading {
+    line-height: 104px; }
+
   .footer > .row > .col > div:nth-child(odd):not(:last-child) {
     width: 36.25%; }
   .footer > .row > .col > div:last-child {
-    width: 25%; }
-  .footer > .row > .col > div {
-    float: left; } }
+    width: 25%; } }
 @media (min-width: 1200px) {
   body {
     padding-top: 258px; }
@@ -4460,6 +4461,20 @@ body {
     height: 258px; }
 
   .logo__heading {
-    line-height: 208px; } }
+    line-height: 208px; }
+
+  .sidebar {
+    float: right;
+    max-width: 25%; }
+
+  .mainContent {
+    max-width: 75%; }
+
+  .footer {
+    max-width: 74%; }
+    .footer > .row > .col > div:nth-child(odd):not(:last-child) {
+      width: 36.1%; }
+    .footer > .row > .col > div:last-child {
+      width: 25%; } }
 
 /*# sourceMappingURL=master.css.map */
