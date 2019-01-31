@@ -267,11 +267,12 @@ body {
 	@include transition(.35s all linear);
 	width: 10vw;
 	background-color: $black;
-	opacity: .75;
+	opacity: 0;
 	z-index: 2;
 }
 
 .navFadeOut--active {
+	opacity: .75;
 	left: 90vw;
 }
 
