@@ -4398,6 +4398,11 @@ body {
       font-size: .9em;
       font-style: italic;
       margin-bottom: 5px; }
+  .mainContent__content .mainContent__contentFull {
+    display: none; }
+  .mainContent__content img {
+    margin-top: 5px;
+    margin-bottom: 5px; }
 
 /* Footer */
 .footer {
@@ -4435,7 +4440,12 @@ body {
     border-bottom: 0;
     height: 100%; }
   .footer > .row > .col > div {
-    float: left; } }
+    float: left; }
+
+  .mainContent__content .mainContent__contentSummary {
+    display: none; }
+  .mainContent__content .mainContent__contentFull {
+    display: block; } }
 @media (min-width: 992px) and (max-width: 1199.98px) {
   body {
     padding-top: 154px; }
