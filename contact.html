@@ -164,30 +164,39 @@
 					<div class="col">
 						<div class="mainContent__content">
 							<div class="mainContent__contentHeading">
-								<h2>About</h2>
+								<h2>Contact</h2>
 							</div>
 
 							<div>
-								<p><strong>Climate Justice Taranaki</strong> is a community group dedicated to justice, education, resistance and positive action at the front lines of climate change. We are based in Taranaki, on the central west coast of New Zealand’s north island.</p>
+								<form action="contact.html" method="post">
+									<div class="form-group">
+										<label for="name">Name (Required)</label>
+										<input class="form-control" type="text" name="name" placeholder="Name (Required)" required>
+									</div>
 
-								<figure>
-									<img src="img/cjt-doa_5269lr1.jpg" alt="Day of Action rally">
-									<figcaption>Day of action rally in New Plymouth, 20 April 2011</figcaption>
-								</figure>
+									<div class="form-group">
+										<label for="email">Email (Required)</label>
+										<input class="form-control" type="email" name="email" placeholder="Email (Required)" required>
+									</div>
 
-								<p>Since the end of 2010, we have focused our work on educating the public about the adverse effects of the massive oil and gas expansion in Taranaki. We rally community support to resist all new onshore and offshore drilling in Taranaki, in particular banning the use of the dangerous technique – <a href="https://climatejusticetaranaki.files.wordpress.com/2011/04/cjt-fracking-factsheet-10may2012.pdf" target="_blank">hydraulic fracturing (fracking)</a>.</p>
+									<div class="form-group">
+										<label for="website">Website</label>
+										<input class="form-control" type="url" name="website" placeholder="Website">
+									</div>
+
+									<div class="form-group">
+										<label for="message">Message (Required)</label>
+										<textarea class="form-control" name="message" rows="8" cols="80" required></textarea>
+									</div>
+
+									<button class="btn" type="submit" name="button">Submit</button>
+								</form>
 
 								<br />
 
-								<p>We advocate for a sustainable Taranaki and the urgent phasing out of investments and dependence on all non-renewable energy and industrial agriculture that degrade our soil and rivers.</p>
-
-								<br />
-
-								<p>Our vision is a world that values resource conservation and efficiency, and sustainable energy, agriculture, transport and other systems that bring justice for the common people, our future generations and planet earth. This is radically different from the exploitative, consumer-based, and profit-driven world that we now live in.</p>
-
-								<img src="img/dontspoilmoana.jpg" alt="Dont spoil our Moana!">
-
-								<p><em><q>We can't solve problems by using the same kind of thinking we used when we created them</q> Albert Einstein.</em></p>
+								<address class="mb-0">
+									Or write us a direct email: <a href="mailto:climatejusticetaranaki@riseup.net">climatejusticetaranaki@riseup.net</a>
+								</address>
 							</div>
 						</div>
 					</div>

@@ -125,6 +125,12 @@ body {
 	background-color: $grey;
 }
 
+.btn {
+	color: $white;
+	background-color: $blue;
+	border-color: $blue;
+}
+
 /* CJT Logo */
 .logo {
 	height: 100%;
@@ -385,12 +391,6 @@ body {
 			margin-bottom: 5px;
 			border-bottom: 1px solid $black;
 			padding-bottom: 5px;
-		}
-
-		.btn {
-			color: $white;
-			background-color: $blue;
-			border-color: $blue;
 		}
 
 		ul {

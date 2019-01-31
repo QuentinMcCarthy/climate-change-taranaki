@@ -4196,6 +4196,11 @@ body {
   padding-top: 52px;
   background-color: #617073; }
 
+.btn {
+  color: #fff;
+  background-color: #5581c0;
+  border-color: #5581c0; }
+
 /* CJT Logo */
 .logo {
   height: 100%;
@@ -4205,6 +4210,9 @@ body {
 
 .logo__anchor {
   display: block; }
+
+.logo__anchor:hover {
+  text-decoration: none; }
 
 .logo__heading {
   margin-top: 0;
@@ -4423,10 +4431,6 @@ body {
     margin-bottom: 5px;
     border-bottom: 1px solid #000;
     padding-bottom: 5px; }
-  .footer > .row > .col .btn {
-    color: #fff;
-    background-color: #5581c0;
-    border-color: #5581c0; }
   .footer > .row > .col ul {
     margin-bottom: 0;
     margin-left: 15px;
