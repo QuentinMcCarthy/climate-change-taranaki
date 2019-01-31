@@ -13,3 +13,15 @@ $(document).ready(function(){
 				.toggleClass("navSlider__nestedNav--open")
 	});
 });
+
+$(window).resize(function() {
+	if($(window).width() >= 992){
+		if($(".navSlider").hasClass("navSlider--open")){
+			$(".navSlider").removeClass("navSlider--open");
+		}
+
+		if($(".navFadeOut").hasClass("navFadeOut--active")){
+			$(".navFadeOut").removeClass("navFadeOut--active");
+		}
+	}
+})
