@@ -9,6 +9,7 @@
 
 //- Sizing
 $headerHeight: 52px;
+$pageMinWidth: 500px;
 
 //- Colorscheme
 $black: #000;
@@ -120,6 +121,7 @@ html {
 
 body {
 	padding-top: $headerHeight;
+	min-width: $pageMinWidth;
 	background-color: $grey;
 }
 
@@ -160,6 +162,7 @@ body {
 /* Header */
 .header {
 	@include position(fixed, 0, 0, nul, 0);
+	min-width: $pageMinWidth;
 	height: $headerHeight;
 	background-color: $white;
 	z-index: 1;
@@ -194,11 +197,12 @@ body {
 
 /* Slide-out Navigation */
 .navSlider {
-	@include position(fixed, 0, nul, 0, -90vw);
+	@include position(fixed, 0, nul, 0, -100vw);
 	@include transition(.35s all linear);
+	min-width: $pageMinWidth;
 	width: 90vw;
 	background-color: $grey;
-	z-index: 2;
+	z-index: 3;
 }
 
 .navSlider__header {
@@ -395,6 +399,21 @@ body {
 			@include margin(nul, nul, 0, 15px);
 			padding-left: 5px;
 		}
+	}
+}
+
+@media (max-width: $pageMinWidth) {
+	.navSlider {
+		@include transition(0.5s all cubic-bezier(1,0,0,1));
+		left: -350%;
+	}
+
+	.navSlider--open {
+		left: 0;
+	}
+
+	.navFadeOut {
+		display: none;
 	}
 }
 

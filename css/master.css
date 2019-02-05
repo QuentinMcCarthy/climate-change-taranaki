@@ -4194,6 +4194,7 @@ html {
 
 body {
   padding-top: 52px;
+  min-width: 500px;
   background-color: #617073; }
 
 .btn {
@@ -4231,6 +4232,7 @@ body {
   top: 0;
   right: 0;
   left: 0;
+  min-width: 500px;
   height: 52px;
   background-color: #fff;
   z-index: 1; }
@@ -4260,14 +4262,15 @@ body {
   position: fixed;
   top: 0;
   bottom: 0;
-  left: -90vw;
+  left: -100vw;
   transition: 0.35s all linear;
   -webkit-transition: 0.35s all linear;
   -ms-transition: 0.35s all linear;
   -moz-transition: 0.35s all linear;
+  min-width: 500px;
   width: 90vw;
   background-color: #617073;
-  z-index: 2; }
+  z-index: 3; }
 
 .navSlider__header {
   height: 52px;
@@ -4436,6 +4439,19 @@ body {
     margin-left: 15px;
     padding-left: 5px; }
 
+@media (max-width: 500px) {
+  .navSlider {
+    transition: 0.5s all cubic-bezier(1, 0, 0, 1);
+    -webkit-transition: 0.5s all cubic-bezier(1, 0, 0, 1);
+    -ms-transition: 0.5s all cubic-bezier(1, 0, 0, 1);
+    -moz-transition: 0.5s all cubic-bezier(1, 0, 0, 1);
+    left: -350%; }
+
+  .navSlider--open {
+    left: 0; }
+
+  .navFadeOut {
+    display: none; } }
 @media (min-width: 768px) and (max-width: 991.98px) {
   .navSlider__nav--nested::after {
     left: 95%; } }
